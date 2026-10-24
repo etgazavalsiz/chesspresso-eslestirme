@@ -1,7 +1,7 @@
 {
   "name": "chesspresso-eslestirme",
   "productName": "Chesspresso Eşleştirme",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "İsviçre sistemi satranç turnuvaları için eşleştirme ve sıralama programı",
   "main": "main.js",
   "author": "etgazavalsiz",
@@ -12,17 +12,44 @@
     "url": "https://github.com/etgazavalsiz/chesspresso-eslestirme.git"
   },
   "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "start": "electron .",
+    "dist": "electron-builder --win nsis --x64"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^8.0.1",
-    "@electron-forge/maker-squirrel": "^8.0.1",
-    "@electron-forge/maker-zip": "^8.0.1",
-    "electron": "^45.0.0"
+    "electron": "^45.0.0",
+    "electron-builder": "^26.18.0"
   },
-  "dependencies": {
-    "electron-squirrel-startup": "^1.0.1"
+  "build": {
+    "appId": "io.github.etgazavalsiz.chesspresso",
+    "productName": "Chesspresso Eşleştirme",
+    "executableName": "chesspresso",
+    "copyright": "MIT Lisansı — github.com/etgazavalsiz/chesspresso-eslestirme",
+    "files": ["package.json", "index.html", "main.js", "build/icon.png"],
+    "directories": { "output": "dist", "buildResources": "build" },
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico",
+      "artifactName": "Chesspresso-Kurulum-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": "always",
+      "createStartMenuShortcut": true,
+      "shortcutName": "Chesspresso Eşleştirme",
+      "uninstallDisplayName": "Chesspresso Eşleştirme",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "installerHeaderIcon": "build/icon.ico",
+      "installerSidebar": "build/installerSidebar.bmp",
+      "uninstallerSidebar": "build/installerSidebar.bmp",
+      "installerHeader": "build/installerHeader.bmp",
+      "installerLanguages": ["tr_TR"],
+      "language": "1055",
+      "runAfterFinish": true,
+      "deleteAppDataOnUninstall": false,
+      "include": "build/installer.nsh"
+    }
   }
 }

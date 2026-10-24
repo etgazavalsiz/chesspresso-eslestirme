@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chesspresso Eşleştirme</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#1e6a50">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
 <meta name="description" content="Chesspresso Eşleştirme — İsviçre sistemi satranç turnuvaları için eşleştirme ve sıralama programı.">
 <link rel="icon" href="data:image/png;base64,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">
 <style>
@@ -39,6 +42,7 @@
   color-scheme:dark;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html,body{margin:0}
 body{background:var(--bg);color:var(--text);font:14px/1.5 "Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
 button,input,select,textarea{font:inherit;color:inherit}
@@ -99,7 +103,7 @@ main{max-width:1240px;margin:0 auto;padding:20px 20px 80px}
 .icon-btn:hover{color:var(--text);border-color:var(--border-strong)}
 
 /* Formlar */
-input[type=text],input[type=number],input[type=date],input:not([type]),select,textarea{border:1px solid var(--border-strong);background:var(--surface);border-radius:8px;padding:7px 10px;min-width:0}
+input[type=text],input[type=number],input[type=date],input[type=password],input:not([type]),select,textarea{border:1px solid var(--border-strong);background:var(--surface);border-radius:8px;padding:7px 10px;min-width:0}
 input:focus,select:focus,textarea:focus{outline:2px solid color-mix(in srgb,var(--accent) 40%,transparent);outline-offset:0;border-color:var(--accent)}
 textarea{width:100%;resize:vertical}
 .field{display:grid;gap:4px;margin-bottom:12px}
@@ -231,6 +235,36 @@ tr.rematch td{background:var(--warn-soft)}
 .empty .ic{font-size:34px;margin-bottom:6px;color:var(--faint)}
 .empty p{margin:0 0 14px}
 
+/* Giriş / kayıt */
+.auth .card{text-align:left}
+.auth-tabs{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;margin-bottom:16px;border-radius:10px;background:var(--surface-2);border:1px solid var(--border)}
+.auth-tabs button{border:0;background:none;padding:8px;border-radius:7px;cursor:pointer;font-weight:600;color:var(--muted)}
+.auth-tabs button.on{background:var(--surface);color:var(--text);box-shadow:var(--shadow)}
+.field>span small{font-weight:450;color:var(--faint)}
+.check{display:flex;align-items:center;gap:8px;margin:2px 0 14px;color:var(--muted);cursor:pointer}
+.check input{width:16px;height:16px;accent-color:var(--accent)}
+.auth form .btn.lg{width:100%}
+.auth-links{margin:12px 0 0;text-align:center;font-size:13px}
+.known{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:14px;padding-top:14px;border-top:1px solid var(--border);font-size:13px}
+.known .chip{padding:3px 11px;font-size:13px}
+.auth-note{font-size:12.5px;margin-top:14px!important}
+.rcode{font:600 22px/1.2 ui-monospace,Consolas,monospace;letter-spacing:.08em;text-align:center;padding:14px;border-radius:10px;background:var(--accent-soft);color:var(--accent);user-select:all}
+.notice.legacy .actions{margin-top:10px}
+
+/* Hesap menüsü */
+.umenu{position:relative}
+.umenu summary{list-style:none;display:flex;align-items:center;gap:8px;cursor:pointer;padding:3px 10px 3px 3px;border:1px solid var(--border-strong);border-radius:999px;background:var(--surface)}
+.umenu summary::-webkit-details-marker{display:none}
+.umenu summary:hover{border-color:var(--accent)}
+.avatar{width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-weight:700;font-size:13px}
+.uname{font-weight:600;max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.umenu .menu{position:absolute;right:0;top:calc(100% + 6px);min-width:200px;background:var(--surface);border:1px solid var(--border);border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.15);padding:6px;z-index:30}
+.menu-head{padding:8px 10px 10px;font-weight:650;border-bottom:1px solid var(--border);margin-bottom:4px}
+.menu-head small{display:block;font-weight:450;color:var(--faint);font-size:12px}
+.umenu .menu button{display:block;width:100%;text-align:left;border:0;background:none;padding:8px 10px;border-radius:7px;cursor:pointer}
+.umenu .menu button:hover{background:var(--surface-2)}
+@media (max-width:640px){.uname{display:none}.umenu summary{padding:3px}}
+
 /* Diyalog */
 dialog{border:1px solid var(--border);border-radius:14px;padding:0;background:var(--surface);color:var(--text);box-shadow:0 20px 60px rgba(0,0,0,.25);width:min(520px,calc(100vw - 32px))}
 dialog::backdrop{background:rgba(15,15,10,.45)}
@@ -293,6 +327,8 @@ dialog::backdrop{background:rgba(15,15,10,.45)}
     <div class="top-right">
       <select id="tsel" class="tsel" data-change="switch-t" aria-label="Turnuva seç"></select>
       <span id="saveState" class="save">Otomatik kaydediliyor</span>
+      <button id="installBtn" class="btn sm primary" data-act="pwa-install" hidden>Uygulamayı yükle</button>
+      <div id="userBox"></div>
     </div>
   </div>
 </header>
@@ -1121,7 +1157,7 @@ const PdfKit = (() => {
 (() => {
 'use strict';
 const S = Swiss;
-const APP_VERSION = '1.0.0';
+const APP_VERSION = '1.1.0';
 const LS_KEY = 'isvicre-satranc-v1'; // eski sürümlerle aynı anahtar: kayıtlı turnuvalar korunur
 const $ = (s, el = document) => el.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -1141,15 +1177,24 @@ const fmtTb = (k, v) => {
 const RES_LABEL = { '1-0': '1–0', '0-1': '0–1', '=': '½–½', '+-': '+/−', '-+': '−/+', '--': '−/−' };
 const FLIP = { '1-0': '0-1', '0-1': '1-0', '=': '=', '+-': '-+', '-+': '+-', '--': '--' };
 
-let db = { tournaments: {}, order: [], activeId: null };
+const emptyDb = () => ({ tournaments: {}, order: [], activeId: null });
+let db = emptyDb();
 let storageOk = true;
-const ui = { tab: 'players', round: null, edit: false, sel: null, standRound: null, focusAdd: false };
+const ui = { tab: 'players', round: null, edit: false, sel: null, standRound: null, focusAdd: false, authMode: null, authMsg: '', authName: '' };
+const isElectron = navigator.userAgent.includes('Electron');
 
-/* ---------- Kayıt ---------- */
+/* ---------- Kayıt ----------
+   Her hesabın turnuvaları ayrı anahtarda durur: LS_KEY + ':u:' + hesap kimliği.
+   LS_KEY'in kendisi, hesaplardan önceki sürümlerden kalan (sahipsiz) turnuvalardır. */
+const userKey = id => `${LS_KEY}:u:${id}`;
+function readDb(key) {
+  const d = JSON.parse(localStorage.getItem(key) || 'null');
+  return d && d.tournaments ? d : emptyDb();
+}
 function load() {
+  db = emptyDb();
   try {
-    const raw = localStorage.getItem(LS_KEY);
-    if (raw) { const d = JSON.parse(raw); if (d && d.tournaments) db = d; }
+    if (currentUser) db = readDb(userKey(currentUser.id));
     const u = JSON.parse(localStorage.getItem(LS_KEY + ':ui') || 'null');
     if (u && u.tab) ui.tab = u.tab;
   } catch (e) { storageOk = false; }
@@ -1158,9 +1203,167 @@ function load() {
   if (!db.tournaments[db.activeId]) db.activeId = db.order[0] || null;
 }
 function save() {
-  try { localStorage.setItem(LS_KEY, JSON.stringify(db)); storageOk = true; }
+  if (!currentUser) return;
+  try { localStorage.setItem(userKey(currentUser.id), JSON.stringify(db)); storageOk = true; }
   catch (e) { storageOk = false; }
   renderSaveState();
+}
+
+/* ---------- Hesaplar (yalnızca bu bilgisayarda) ----------
+   Şifre ve kurtarma kodu düz metin saklanmaz: PBKDF2-SHA256 (tuzlu) özetleri tutulur.
+   Hesaplar turnuvaları birbirinden ayırır; veriler şifrelenmez. */
+const ACC_KEY = 'chesspresso-hesaplar-v1';
+const SES_KEY = 'chesspresso-oturum-v1';
+const PBKDF2_ITER = 150000;
+let accounts = { users: {} };
+let currentUser = null;
+
+function loadAccounts() {
+  try { const a = JSON.parse(localStorage.getItem(ACC_KEY) || 'null'); if (a && a.users) accounts = a; }
+  catch (e) { storageOk = false; }
+}
+function saveAccounts() {
+  try { localStorage.setItem(ACC_KEY, JSON.stringify(accounts)); }
+  catch (e) { storageOk = false; toast('Hesap bilgisi kaydedilemedi.', 'err'); }
+}
+const normName = s => String(s || '').trim().toLocaleLowerCase('tr');
+const findUser = name => Object.values(accounts.users).find(u => normName(u.username) === normName(name));
+const normCode = s => String(s || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+const toB64 = bytes => btoa(String.fromCharCode(...bytes));
+const fromB64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+const randomBytes = n => crypto.getRandomValues(new Uint8Array(n));
+
+async function derive(secret, salt, iter) {
+  const key = await crypto.subtle.importKey('raw', new TextEncoder().encode(secret), 'PBKDF2', false, ['deriveBits']);
+  const bits = await crypto.subtle.deriveBits({ name: 'PBKDF2', hash: 'SHA-256', salt, iterations: iter }, key, 256);
+  return toB64(new Uint8Array(bits));
+}
+async function makeSecret(secret) {
+  const salt = randomBytes(16);
+  return { salt: toB64(salt), hash: await derive(secret, salt, PBKDF2_ITER), iter: PBKDF2_ITER };
+}
+async function checkSecret(secret, rec) {
+  return !!rec && (await derive(secret, fromB64(rec.salt), rec.iter)) === rec.hash;
+}
+function newRecoveryCode() {
+  const A = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  const r = randomBytes(12);
+  let s = '';
+  for (let i = 0; i < 12; i++) { s += A[r[i] % A.length]; if (i === 3 || i === 7) s += '-'; }
+  return s;
+}
+function restoreSession() {
+  let id = null;
+  try { id = sessionStorage.getItem(SES_KEY) || localStorage.getItem(SES_KEY); } catch (e) { /* oturum yok */ }
+  currentUser = (id && accounts.users[id]) || null;
+}
+function startSession(user, remember) {
+  currentUser = user;
+  try {
+    sessionStorage.setItem(SES_KEY, user.id);
+    if (remember) localStorage.setItem(SES_KEY, user.id); else localStorage.removeItem(SES_KEY);
+  } catch (e) { /* yalnızca bu pencere için */ }
+  Object.assign(ui, { tab: 'players', round: null, standRound: null, edit: false, sel: null, authMsg: '', authMode: null });
+  load();
+  render();
+}
+function logout() {
+  try { sessionStorage.removeItem(SES_KEY); localStorage.removeItem(SES_KEY); } catch (e) { /* önemli değil */ }
+  ui.authName = currentUser ? currentUser.username : '';
+  currentUser = null;
+  db = emptyDb();
+  render();
+}
+function authFail(msg, name) { ui.authMsg = msg; ui.authName = name || ''; render(); }
+
+async function registerUser(fd) {
+  const username = String(fd.username || '').trim();
+  if (username.length < 2 || username.length > 30) return authFail('Kullanıcı adı 2–30 karakter olmalı.', username);
+  if (findUser(username)) return authFail('Bu kullanıcı adı bu bilgisayarda zaten var. Giriş yapın veya başka bir ad seçin.', username);
+  if (String(fd.password).length < 6) return authFail('Şifre en az 6 karakter olmalı.', username);
+  if (fd.password !== fd.password2) return authFail('Şifreler birbiriyle aynı değil.', username);
+  if (!window.crypto || !crypto.subtle) return authFail('Bu tarayıcı güvenli şifre saklamayı desteklemiyor.', username);
+  const code = newRecoveryCode();
+  const user = { id: uid(), username, createdAt: Date.now(), pw: await makeSecret(fd.password), rc: await makeSecret(normCode(code)) };
+  accounts.users[user.id] = user;
+  saveAccounts();
+  await dialog({
+    title: 'Kurtarma kodunuz',
+    html: `<p>Şifrenizi unutursanız yeni şifre belirlemek için bu kod gerekir. Bir yere not edin; <b>tekrar gösterilmez</b>.</p><div class="rcode">${code}</div>`,
+    ok: 'Not ettim, devam et', cancel: '',
+  });
+  startSession(user, fd.remember === 'on');
+  toast(`Hoş geldiniz, ${username}!`);
+}
+async function loginUser(fd) {
+  const u = findUser(fd.username);
+  if (!u || !(await checkSecret(String(fd.password || ''), u.pw))) return authFail('Kullanıcı adı veya şifre hatalı.', fd.username);
+  startSession(u, fd.remember === 'on');
+}
+async function forgotPassword() {
+  const r = await dialog({
+    title: 'Şifremi unuttum',
+    html: `<p class="muted">Hesap açarken gösterilen kurtarma koduyla yeni şifre belirleyin.</p>
+      <label class="field"><span>Kullanıcı adı</span><input name="username" required value="${esc(ui.authName)}"></label>
+      <label class="field"><span>Kurtarma kodu</span><input name="code" required placeholder="XXXX-XXXX-XXXX" autocomplete="off"></label>
+      <label class="field"><span>Yeni şifre</span><input name="pw" type="password" required minlength="6" autocomplete="new-password"></label>
+      <label class="field"><span>Yeni şifre (tekrar)</span><input name="pw2" type="password" required minlength="6" autocomplete="new-password"></label>`,
+    ok: 'Şifreyi yenile',
+  });
+  if (!r) return;
+  const u = findUser(r.username);
+  if (!u || !(await checkSecret(normCode(r.code), u.rc))) { toast('Kullanıcı adı veya kurtarma kodu hatalı.', 'err'); return; }
+  if (r.pw !== r.pw2) { toast('Yeni şifreler birbiriyle aynı değil.', 'err'); return; }
+  u.pw = await makeSecret(r.pw);
+  saveAccounts();
+  Object.assign(ui, { authName: u.username, authMsg: '', authMode: 'login' });
+  render();
+  toast('Şifre yenilendi. Yeni şifrenizle giriş yapın.');
+}
+async function changePassword() {
+  const r = await dialog({
+    title: 'Şifreyi değiştir',
+    html: `<label class="field"><span>Şu anki şifre</span><input name="cur" type="password" required autocomplete="current-password"></label>
+      <label class="field"><span>Yeni şifre</span><input name="pw" type="password" required minlength="6" autocomplete="new-password"></label>
+      <label class="field"><span>Yeni şifre (tekrar)</span><input name="pw2" type="password" required minlength="6" autocomplete="new-password"></label>`,
+    ok: 'Değiştir',
+  });
+  if (!r) return;
+  const u = accounts.users[currentUser.id];
+  if (!(await checkSecret(r.cur, u.pw))) { toast('Şu anki şifre hatalı.', 'err'); return; }
+  if (r.pw !== r.pw2) { toast('Yeni şifreler birbiriyle aynı değil.', 'err'); return; }
+  u.pw = await makeSecret(r.pw);
+  saveAccounts();
+  toast('Şifreniz değiştirildi.');
+}
+
+/* Hesaplardan önce kaydedilmiş turnuvalar kimseye kendiliğinden gösterilmez; isteyen hesabına aktarır. */
+function legacyList() {
+  let d = emptyDb();
+  try { d = readDb(LS_KEY); } catch (e) { /* bozuk kayıt: yok say */ }
+  return { d, ids: Object.keys(d.tournaments) };
+}
+function legacyNotice() {
+  if (!currentUser || (accounts.users[currentUser.id] || {}).legacyDismissed) return '';
+  const { d, ids } = legacyList();
+  if (!ids.length) return '';
+  const names = ids.slice(0, 3).map(id => `“${esc(d.tournaments[id].name)}”`).join(', ') + (ids.length > 3 ? ` ve ${ids.length - 3} turnuva daha` : '');
+  return `<div class="notice legacy no-print"><b>Bu ${isElectron ? 'bilgisayarda' : 'tarayıcıda'} hesap açılmadan önce kaydedilmiş ${ids.length} turnuva var:</b> ${names}.
+    Sizinse hesabınıza aktarabilirsiniz; aktarılan turnuvaları başka hesaplar göremez.
+    <div class="actions"><button class="btn sm primary" data-act="legacy-claim">Hesabıma aktar</button><button class="btn sm ghost" data-act="legacy-dismiss">Bana bir daha gösterme</button></div></div>`;
+}
+function claimLegacy() {
+  const { d, ids } = legacyList();
+  for (const id of ids) {
+    if (db.tournaments[id]) continue;
+    db.tournaments[id] = d.tournaments[id];
+    db.order.push(id);
+  }
+  if (!db.tournaments[db.activeId]) db.activeId = db.order[0] || null;
+  save();
+  try { localStorage.removeItem(LS_KEY); } catch (e) { /* önemli değil */ }
+  render();
+  toast(`${ids.length} turnuva hesabınıza aktarıldı`);
 }
 function saveUi() { try { localStorage.setItem(LS_KEY + ':ui', JSON.stringify({ tab: ui.tab })); } catch (e) { /* önemli değil */ } }
 function renderSaveState() {
@@ -1671,18 +1874,66 @@ function renderHero(t) {
   hero.innerHTML = `<div class="hero"><h1>${esc(t.name)}</h1><div class="meta">${meta.map(m => `<span>${esc(m)}</span>`).join('')}</div>
     <nav class="tabs">${TABS.map(([k, l]) => `<button class="tab ${ui.tab === k ? 'on' : ''}" data-act="tab" data-tab="${k}">${l}${counts[k] != null ? `<span class="n">${counts[k]}</span>` : ''}</button>`).join('')}</nav></div>`;
 }
+function renderUserBox() {
+  const box = $('#userBox');
+  if (!currentUser) { box.innerHTML = ''; return; }
+  const n = currentUser.username;
+  box.innerHTML = `<details class="umenu"><summary title="Hesap"><span class="avatar">${esc(n.charAt(0).toLocaleUpperCase('tr'))}</span><span class="uname">${esc(n)}</span></summary>
+    <div class="menu"><div class="menu-head">${esc(n)}<small>${isElectron ? 'Bu bilgisayardaki hesap' : 'Bu tarayıcıdaki hesap'}</small></div>
+      <button data-act="pw-change">Şifreyi değiştir</button>
+      <button data-act="logout">Çıkış yap</button></div></details>`;
+}
 function render() {
+  renderUserBox();
+  const app = $('#app');
+  if (!currentUser) {
+    $('#tsel').hidden = true;
+    $('#saveState').hidden = true;
+    $('#hero').innerHTML = '';
+    app.innerHTML = viewAuth();
+    const f = [...app.querySelectorAll('form input')].find(i => !i.value && i.type !== 'checkbox');
+    if (f) f.focus();
+    return;
+  }
+  $('#saveState').hidden = false;
   renderHeader();
   renderSaveState();
   const t = T();
   renderHero(t);
-  const app = $('#app');
-  if (!t) { app.innerHTML = viewWelcome(); return; }
+  if (!t) { app.innerHTML = legacyNotice() + viewWelcome(); return; }
   const views = { settings: viewSettings, players: viewPlayers, rounds: viewRounds, standings: viewStandings, cross: viewCross };
   const v = views[ui.tab] || viewPlayers;
   const sub = [t.place, t.date, t.arbiter ? 'Başhakem: ' + t.arbiter : ''].filter(Boolean).join(' · ');
-  app.innerHTML = `<div class="print-title"><h1>${esc(t.name)}</h1><div>${esc(sub)}</div></div>` + v(t);
+  app.innerHTML = legacyNotice() + `<div class="print-title"><h1>${esc(t.name)}</h1><div>${esc(sub)}</div></div>` + v(t);
   if (ui.focusAdd) { ui.focusAdd = false; const i = $('form[data-form="add-player"] input[name=name]'); if (i) i.focus(); }
+}
+
+function viewAuth() {
+  const users = Object.values(accounts.users).sort((a, b) => a.username.localeCompare(b.username, 'tr'));
+  const reg = ui.authMode ? ui.authMode === 'register' : !users.length;
+  const where = isElectron ? 'bu bilgisayarda' : 'bu tarayıcıda';
+  return `<section class="welcome"><div class="welcome-card auth">
+    <div class="big">♞</div>
+    <h1>Chesspresso Eşleştirme</h1>
+    <p>${reg ? 'Turnuvalarınızı başkalarınınkinden ayrı tutmak için bir hesap oluşturun.' : 'Turnuvalarınıza ulaşmak için giriş yapın.'}</p>
+    <div class="card">
+      <div class="auth-tabs" role="tablist">
+        <button role="tab" class="${reg ? '' : 'on'}" data-act="auth-mode" data-mode="login">Giriş yap</button>
+        <button role="tab" class="${reg ? 'on' : ''}" data-act="auth-mode" data-mode="register">Kayıt ol</button>
+      </div>
+      ${ui.authMsg ? `<div class="notice bad">${esc(ui.authMsg)}</div>` : ''}
+      <form data-form="${reg ? 'register' : 'login'}">
+        <label class="field"><span>Kullanıcı adı</span><input name="username" required minlength="2" maxlength="30" autocomplete="username" value="${esc(ui.authName)}"></label>
+        <label class="field"><span>Şifre${reg ? ' <small>(en az 6 karakter)</small>' : ''}</span><input name="password" type="password" required ${reg ? 'minlength="6" autocomplete="new-password"' : 'autocomplete="current-password"'}></label>
+        ${reg ? '<label class="field"><span>Şifre (tekrar)</span><input name="password2" type="password" required minlength="6" autocomplete="new-password"></label>' : ''}
+        <label class="check"><input type="checkbox" name="remember" checked> Beni ${where} hatırla</label>
+        <button class="btn primary lg">${reg ? 'Hesap oluştur' : 'Giriş yap'}</button>
+      </form>
+      ${!reg ? '<p class="auth-links"><a href="#" data-act="forgot">Şifremi unuttum</a></p>' : ''}
+      ${!reg && users.length ? `<div class="known"><span class="muted">Bu ${isElectron ? 'bilgisayardaki' : 'tarayıcıdaki'} hesaplar:</span> ${users.map(u => `<button class="chip" data-act="pick-user" data-name="${esc(u.username)}">${esc(u.username)}</button>`).join('')}</div>` : ''}
+    </div>
+    <p class="muted auth-note">Hesaplar ve turnuvalar yalnızca ${where} saklanır, hiçbir yere gönderilmez. Her hesap yalnızca kendi turnuvalarını görür.</p>
+  </div></section>`;
 }
 
 function viewWelcome() {
@@ -2034,6 +2285,7 @@ function viewSettings(t) {
         <p><b>Tek seferde en iyi çözüm.</b> Bu kurallar öncelik sırasıyla ağırlıklandırılır ve Edmonds eşleştirme algoritması tüm olasılıklar arasından en iyisini bulur; çıkmaza girmez.</p>
         <p><b>Not.</b> Program FIDE kurallarını yakından izler ancak FIDE onaylı bir eşleştirme motoru değildir. Resmî ELO/UKD işlenecek turnuvalarda federasyonun istediği yazılımı kullanın.</p>
         <p><b>Averaj.</b> Oynanmayan turlar (bay, hükmen, izin) Buchholz ve Sonneborn-Berger hesabında oyuncunun kendi puanına sahip sanal bir rakiple oynanmış sayılır.</p>
+        <p><b>Hesaplar.</b> Her hesap yalnızca kendi turnuvalarını görür. Hesaplar ve turnuvalar bu bilgisayarda saklanır, internete gönderilmez; şifreler düz metin olarak tutulmaz. Başka bilgisayara geçerken “Yedek indir” ile alınan dosyayı orada “Yedekten yükle” ile açın.</p>
       </div>
     </section>
   </div>`;
@@ -2074,7 +2326,22 @@ document.addEventListener('click', async ev => {
     case 'pdf-cross': pdfCross(); break;
     case 'pdf-full': pdfFull(); break;
     case 'close-dlg': $('#dlg').close('cancel'); break;
+    case 'auth-mode': Object.assign(ui, { authMode: el.dataset.mode, authMsg: '' }); render(); break;
+    case 'pick-user': Object.assign(ui, { authName: el.dataset.name, authMsg: '' }); render(); break;
+    case 'forgot': forgotPassword(); break;
+    case 'logout': logout(); break;
+    case 'pw-change': el.closest('details').open = false; changePassword(); break;
+    case 'legacy-claim': claimLegacy(); break;
+    case 'legacy-dismiss': accounts.users[currentUser.id].legacyDismissed = true; saveAccounts(); render(); break;
+    case 'pwa-install':
+      if (installEvt) { installEvt.prompt(); installEvt.userChoice.finally(() => { installEvt = null; $('#installBtn').hidden = true; }); }
+      break;
   }
+});
+// Hesap menüsü dışına tıklanınca kapanır
+document.addEventListener('click', ev => {
+  const m = document.querySelector('.umenu[open]');
+  if (m && !m.contains(ev.target)) m.open = false;
 });
 document.addEventListener('change', ev => {
   const el = ev.target;
@@ -2115,12 +2382,20 @@ document.addEventListener('change', ev => {
     commit();
   }
 });
-document.addEventListener('submit', ev => {
+document.addEventListener('submit', async ev => {
   const form = ev.target;
   const kind = form.dataset.form;
   if (!kind) return;
   ev.preventDefault();
   const fd = Object.fromEntries(new FormData(form));
+  if (kind === 'login' || kind === 'register') {
+    const btn = form.querySelector('button');
+    btn.disabled = true;
+    btn.textContent = 'Lütfen bekleyin…';
+    try { await (kind === 'login' ? loginUser(fd) : registerUser(fd)); }
+    catch (e) { console.error(e); authFail('Beklenmeyen bir hata oldu: ' + (e.message || e), fd.username); }
+    return;
+  }
   if (kind === 'create') { createTournament(fd.name.trim(), parseInt(fd.rounds, 10)); commit(); return; }
   if (kind === 'add-player') {
     const t = T();
@@ -2131,8 +2406,21 @@ document.addEventListener('submit', ev => {
     if (started(t)) toast(`${p.name} eklendi (#${p.no}). Önceki turlardan 0 puan alır.`, 'warn');
   }
 });
-window.addEventListener('storage', e => { if (e.key === LS_KEY) { load(); render(); } });
+window.addEventListener('storage', e => {
+  if (e.key === ACC_KEY) loadAccounts();
+  if (currentUser && (e.key === userKey(currentUser.id) || e.key === LS_KEY || e.key === ACC_KEY)) { load(); render(); }
+});
 
+// Tarayıcıdan masaüstüne yükleme (PWA): Edge/Chrome uygun olduğunda "Uygulamayı yükle" düğmesi çıkar.
+let installEvt = null;
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); installEvt = e; $('#installBtn').hidden = false; });
+window.addEventListener('appinstalled', () => { installEvt = null; $('#installBtn').hidden = true; toast('Chesspresso Eşleştirme bilgisayarınıza yüklendi'); });
+if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+  navigator.serviceWorker.register('sw.js').catch(() => { /* çevrimdışı önbellek olmadan da çalışır */ });
+}
+
+loadAccounts();
+restoreSession();
 load();
 render();
 })();

@@ -6,54 +6,72 @@
 
 <p align="center">
   İsviçre sistemi satranç turnuvaları için ücretsiz, Türkçe eşleştirme ve sıralama programı.<br>
-  İnternet gerektirmez · Kurulumlu masaüstü uygulaması veya tek HTML dosyası
+  İnternet gerektirmez · Kişisel hesaplar · Windows, macOS ve Linux
 </p>
 
 <p align="center">
-  <a href="https://github.com/etgazavalsiz/chesspresso-eslestirme/releases/latest"><b>⬇ Windows için indir</b></a>
+  <a href="https://etgazavalsiz.github.io/chesspresso-eslestirme/"><b>▶ Hemen kullan / bilgisayara yükle</b></a>
   &nbsp;·&nbsp;
-  <a href="#kurulumsuz-kullanım">Kurulumsuz kullan</a>
+  <a href="https://github.com/etgazavalsiz/chesspresso-eslestirme/releases/latest">⬇ Windows kurulum dosyası</a>
   &nbsp;·&nbsp;
   <a href="#eşleştirme-kuralları">Eşleştirme kuralları</a>
 </p>
 
 ![Eşleştirme ekranı](docs/eslestirme.png)
 
+## Kurulum
+
+### Yol 1 — Tarayıcıdan yükle (önerilen, güvenlik uyarısı çıkmaz)
+
+1. **Edge** veya **Chrome** ile şu adresi açın: **https://etgazavalsiz.github.io/chesspresso-eslestirme/**
+2. Sağ üstteki **“Uygulamayı yükle”** düğmesine (veya adres çubuğundaki yükle simgesine ⊕) tıklayın.
+3. Chesspresso kendi penceresinde açılır; masaüstüne ve Başlat menüsüne kısayolu eklenir.
+
+Bu şekilde yüklenen uygulama **internet olmadan da çalışır** ve yeni sürümler çıktığında **kendiliğinden güncellenir**. Hiçbir dosya indirmediğiniz için Windows güvenlik uyarısı da çıkmaz. Kaldırmak için uygulama penceresinin sağ üstündeki **⋯ → Kaldır**'ı kullanın.
+
+### Yol 2 — Windows kurulum dosyası
+
+1. [Son sürüm sayfasından](https://github.com/etgazavalsiz/chesspresso-eslestirme/releases/latest) **`Chesspresso-Kurulum-x.y.z.exe`** dosyasını indirip çalıştırın.
+2. Türkçe kurulum sihirbazı açılır: **kimin için kurulsun → klasör → Kur → Bitir**. Yönetici izni gerekmez.
+3. Masaüstünde ve Başlat menüsünde **Chesspresso Eşleştirme** kısayolu oluşur.
+
+> **“Windows kişisel bilgisayarınızı korudu” uyarısı:** Kurulum dosyası ücretli bir kod imzalama sertifikasıyla imzalanmadığı için, internetten indirilen her yeni program gibi Windows SmartScreen bu uyarıyı gösterir. **Ek bilgi → Yine de çalıştır** ile devam edebilirsiniz. Uyarıyla hiç karşılaşmak istemiyorsanız **Yol 1**'i kullanın.
+
+Eski 1.0.0 sürümü kuruluysa yeni kurulum onu kendiliğinden kaldırır; turnuva kayıtlarınız silinmez. **Kaldırmak için:** Ayarlar → Uygulamalar → *Chesspresso Eşleştirme* → Kaldır.
+
+### Yol 3 — Tek dosya
+
+Tüm program [`index.html`](index.html) dosyasıdır. İndirip herhangi bir tarayıcıda açabilirsiniz (macOS ve Linux dahil).
+
+## Hesaplar
+
+| Giriş ekranı | Oyuncular ve renk geçmişi |
+|---|---|
+| ![Giriş](docs/giris.png) | ![Oyuncular](docs/oyuncular.png) |
+
+- İlk açılışta bir **hesap oluşturun** (kullanıcı adı + şifre). Her hesap **yalnızca kendi turnuvalarını** görür; aynı bilgisayarı birden çok hakem kullanabilir.
+- Hesap açarken bir **kurtarma kodu** gösterilir. Şifrenizi unutursanız giriş ekranındaki **“Şifremi unuttum”** ile bu kodla yeni şifre belirlersiniz. Kodu bir yere not edin.
+- Hesaplar ve turnuvalar **yalnızca o bilgisayarda** (tarayıcıdan yüklediyseniz o tarayıcıda) saklanır, internete gönderilmez. Şifreler düz metin olarak değil, PBKDF2 ile özetlenerek tutulur.
+- Hesaplardan önceki bir sürümde oluşturulmuş turnuvalar kimseye kendiliğinden gösterilmez; giriş yapan kullanıcıya **“Hesabıma aktar”** seçeneği sunulur.
+- Başka bilgisayara geçmek için: **Turnuva ayarları → Yedek indir (.json)**, diğer bilgisayarda **Yedekten yükle**.
+
 ## Özellikler
 
 - **Otomatik İsviçre eşleştirmesi** — Puan grupları, Hollanda (Dutch) sistemi mantığı, tekrar eşleşme yok, renk dengesi, otomatik bay. Her tur tek tıkla.
 - **Sonuç girişi** — 1–0, ½–½, 0–1 ve hükmen sonuçlar (+/−, −/+, −/−).
 - **Sıralama ve averajlar** — Buchholz, Buchholz Kesik-1, Medyan Buchholz, Sonneborn-Berger, aralarındaki maç, galibiyet sayısı, siyahla oynanan, kademeli puan, rakip ELO ortalaması. Sırasını siz belirlersiniz.
-- **Çapraz tablo** — Her oyuncunun tur tur rakibi, rengi ve sonucu.
+- **Çapraz tablo** ve oyuncuların tur tur **renk geçmişi**.
 - **PDF indirme** — Tur eşleştirmesi/sonuçları, sıralama, çapraz tablo ve tüm turnuva raporu. Türkçe karakterler sorunsuz.
-- **Excel (CSV) aktarımı**, yazdırma, yedekleme (.json) ve yedekten yükleme.
+- **Excel (CSV)**, yazdırma, yedekleme (.json) ve yedekten yükleme.
 - **Katılım yönetimi** — Tura gelmeyecek oyuncuları "izinli (½)" veya "gelmeyecek (0)" işaretleyin; turnuvadan çekilme, geç katılım.
 - **Elle düzenleme** — Gerekirse eşleştirmede iki oyuncunun yerini veya bir masanın renklerini değiştirin.
-- **Birden çok turnuva** — Hepsi bilgisayarınızda saklanır; açık ve koyu tema.
+- **Birden çok turnuva**, açık ve koyu tema.
 
-| Sıralama | Oyuncular ve renk geçmişi |
-|---|---|
-| ![Sıralama](docs/siralama.png) | ![Oyuncular](docs/oyuncular.png) |
-
-## Kurulum (Windows)
-
-1. [Son sürüm sayfasından](https://github.com/etgazavalsiz/chesspresso-eslestirme/releases/latest) **`Chesspresso-Kurulum-x.y.z.exe`** dosyasını indirin.
-2. Çift tıklayın. Kurulum birkaç saniye sürer; yönetici izni gerekmez.
-3. Masaüstünde ve Başlat menüsünde **Chesspresso Eşleştirme** kısayolu oluşur, program açılır.
-
-> **"Windows kişisel bilgisayarınızı korudu" uyarısı çıkarsa:** Program dijital olarak imzalanmadığı için Windows SmartScreen bu uyarıyı gösterir. **Ek bilgi → Yine de çalıştır** ile devam edebilirsiniz.
-
-**Kaldırmak için:** Ayarlar → Uygulamalar → Yüklü uygulamalar → *Chesspresso Eşleştirme* → Kaldır.
-
-Kurulum istemiyorsanız aynı sayfadaki **`Chesspresso-win32-x64-….zip`** dosyasını açıp içindeki `chesspresso.exe` ile taşınabilir olarak da çalıştırabilirsiniz.
-
-## Kurulumsuz kullanım
-
-Program tek bir dosyadan ibarettir: [`index.html`](index.html). Bu dosyayı indirip Chrome, Edge, Firefox veya Safari ile açmanız yeterlidir — macOS ve Linux dahil. İnternet bağlantısı gerekmez.
+![Sıralama](docs/siralama.png)
 
 ## Hızlı başlangıç
 
-1. **Turnuva oluşturun** — Ad ve tur sayısı (oyuncu sayısı N ise en az log₂N tur önerilir; 16 oyuncu → 4–5 tur).
+1. **Hesap oluşturun**, ardından **turnuva oluşturun** — ad ve tur sayısı (oyuncu sayısı N ise en az log₂N tur önerilir; 16 oyuncu → 4–5 tur).
 2. **Oyuncuları ekleyin** — Tek tek ya da Excel'den toplu yapıştırarak (`Ad Soyad, ELO, Kulüp`). Başlangıç sırası ELO'ya göre otomatik belirlenir.
 3. **Turlar → "1. turu eşleştir"** — Oyuncu sayısı tekse bayı program seçer ve son masaya ekler.
 4. **Sonuçları girin**, sonraki tura geçin. Sıralama ve averajlar anında güncellenir.
@@ -71,29 +89,24 @@ Program FIDE'nin Hollanda (Dutch) sistemi kurallarını öncelik sırasına gör
 6. **Sıra:** Grubun üst yarısı alt yarısıyla eşleşir (8 kişilik grupta 1–5, 2–6, 3–7, 4–8).
 
 **Renk önceliği** (Turnuva ayarları):
-- **Dengeli (varsayılan):** Bir oyuncunun renk farkı 2'ye çıkacaksa (ör. 4 oyunda 3 beyaz), program onu yakın puanlı başka bir rakiple eşleştirir. Simülasyonlarda renk dengesizliğini belirgin şekilde azaltır.
+- **Dengeli (varsayılan):** Bir oyuncunun renk farkı 2'ye çıkacaksa (ör. 4 oyunda 3 beyaz), program onu yakın puanlı başka bir rakiple eşleştirir.
 - **FIDE:** Puan grupları her zaman renkten önce gelir.
 
 > Not: Chesspresso FIDE kurallarını yakından izler ancak **FIDE onaylı bir eşleştirme motoru değildir**. Resmî ELO/UKD işlenecek turnuvalarda federasyonunuzun istediği yazılımı kullanın.
 
-## Veriler ve yedekleme
-
-Turnuvalar yalnızca sizin bilgisayarınızda saklanır; hiçbir yere gönderilmez.
-
-- Masaüstü uygulamasında veriler kullanıcı klasörünüzde, HTML dosyasını tarayıcıda açtığınızda ise o tarayıcının içinde tutulur. İkisi birbirini görmez.
-- **Turnuva ayarları → Yedek indir (.json)** ile yedek alın; başka bir bilgisayara veya uygulamaya **Yedekten yükle** ile taşıyın.
-
 ## Geliştirme
 
-Uygulamanın tamamı [`index.html`](index.html) içindedir (eşleştirme motoru, PDF üretici ve arayüz; dış kütüphane yoktur). Masaüstü sürümü bu dosyayı [Electron](https://www.electronjs.org/) penceresinde açar.
+Uygulamanın tamamı [`index.html`](index.html) içindedir (eşleştirme motoru, PDF üretici, hesaplar ve arayüz; dış kütüphane yoktur). Tarayıcıdan yükleme için [`manifest.webmanifest`](manifest.webmanifest) ve [`sw.js`](sw.js) kullanılır; masaüstü sürümü aynı dosyayı [Electron](https://www.electronjs.org/) penceresinde açar.
 
 ```bash
 npm install
 npm start          # masaüstü uygulamasını geliştirme modunda açar
-npm run make       # Windows kurulum dosyasını out/make/ altına üretir
+npm run dist       # Windows kurulum sihirbazını (NSIS) dist/ altına üretir
 ```
 
-Simgeyi yeniden üretmek için: `powershell -File build/make-icon.ps1`
+Simgeleri ve kurulum görsellerini yeniden üretmek için: `powershell -File build/make-icon.ps1`
+
+> Windows'ta proje klasörünün yolu çok uzunsa (260 karakter sınırı) kurulum derlemesi hata verebilir; projeyi kısa bir yola koyun (ör. `C:\dev\chesspresso`).
 
 ## Teşekkür
 

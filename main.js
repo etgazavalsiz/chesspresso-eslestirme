@@ -3,9 +3,6 @@
 const { app, BrowserWindow, Menu, shell } = require('electron');
 const path = require('path');
 
-// Windows kurulumu/kaldırması sırasında masaüstü ve Başlat menüsü kısayollarını oluşturur.
-if (require('electron-squirrel-startup')) app.quit();
-
 let win = null;
 
 function createWindow() {
