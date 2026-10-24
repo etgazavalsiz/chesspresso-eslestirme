@@ -1,0 +1,28 @@
+{
+  "name": "chesspresso-eslestirme",
+  "productName": "Chesspresso Eşleştirme",
+  "version": "1.0.0",
+  "description": "İsviçre sistemi satranç turnuvaları için eşleştirme ve sıralama programı",
+  "main": "main.js",
+  "author": "etgazavalsiz",
+  "license": "MIT",
+  "homepage": "https://github.com/etgazavalsiz/chesspresso-eslestirme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/etgazavalsiz/chesspresso-eslestirme.git"
+  },
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^8.0.1",
+    "@electron-forge/maker-squirrel": "^8.0.1",
+    "@electron-forge/maker-zip": "^8.0.1",
+    "electron": "^45.0.0"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1"
+  }
+}

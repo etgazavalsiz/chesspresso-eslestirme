@@ -1,0 +1,2141 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chesspresso Eşleştirme</title>
+<meta name="description" content="Chesspresso Eşleştirme — İsviçre sistemi satranç turnuvaları için eşleştirme ve sıralama programı.">
+<link rel="icon" href="data:image/png;base64,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">
+<style>
+:root{
+  --bg:#f4f3ef; --surface:#ffffff; --surface-2:#f8f7f3; --border:#e3e0d8; --border-strong:#cdc9bd;
+  --text:#1c1c1a; --muted:#67655e; --faint:#9a978e;
+  --accent:#1e6a50; --accent-hover:#175841; --accent-ink:#ffffff; --accent-soft:#e1eee8;
+  --danger:#b3261e; --danger-soft:#fbe9e7; --warn:#875700; --warn-soft:#fbf1d9;
+  --gold:#c9a227; --silver:#98a1ab; --bronze:#b07041;
+  --piece-w:#ffffff; --piece-k:#1c1c1a; --piece-line:#1c1c1a;
+  --shadow:0 1px 2px rgba(20,20,10,.05),0 3px 10px rgba(20,20,10,.04);
+  --radius:12px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121311; --surface:#1b1c1a; --surface-2:#222320; --border:#30312d; --border-strong:#454640;
+    --text:#ecebe5; --muted:#a3a198; --faint:#76746c;
+    --accent:#4cb187; --accent-hover:#5fc297; --accent-ink:#0b1d15; --accent-soft:#1c3328;
+    --danger:#f08378; --danger-soft:#3a1d1a; --warn:#e7b65a; --warn-soft:#352a14;
+    --piece-w:#f4f3ee; --piece-k:#0b0b0a; --piece-line:#a3a198;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121311; --surface:#1b1c1a; --surface-2:#222320; --border:#30312d; --border-strong:#454640;
+  --text:#ecebe5; --muted:#a3a198; --faint:#76746c;
+  --accent:#4cb187; --accent-hover:#5fc297; --accent-ink:#0b1d15; --accent-soft:#1c3328;
+  --danger:#f08378; --danger-soft:#3a1d1a; --warn:#e7b65a; --warn-soft:#352a14;
+  --piece-w:#f4f3ee; --piece-k:#0b0b0a; --piece-line:#a3a198;
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--text);font:14px/1.5 "Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}
+h1,h2,h3{line-height:1.25}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* Üst çubuk */
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.top-in{max-width:1240px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:650;font-size:15px;white-space:nowrap}
+.brand-sub{font-weight:450;color:var(--muted)}
+.logo{width:30px;height:30px;border-radius:8px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-size:19px;line-height:1}
+.top-right{margin-left:auto;display:flex;align-items:center;gap:12px;min-width:0}
+.tsel{max-width:280px;padding:6px 10px;border:1px solid var(--border-strong);border-radius:8px;background:var(--surface)}
+.save{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px;white-space:nowrap}
+.save::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.save.err{color:var(--danger)}
+.save.err::before{background:var(--danger)}
+
+/* Başlık ve sekmeler */
+.hero{max-width:1240px;margin:0 auto;padding:22px 20px 0}
+.hero h1{margin:0;font-size:24px;letter-spacing:-.01em;font-weight:650}
+.meta{color:var(--muted);margin-top:2px;display:flex;flex-wrap:wrap;gap:4px 14px}
+.tabs{display:flex;gap:2px;margin-top:16px;border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none}
+.tab{appearance:none;background:none;border:0;padding:10px 14px;border-bottom:2px solid transparent;margin-bottom:-1px;color:var(--muted);cursor:pointer;font-weight:550;white-space:nowrap}
+.tab:hover{color:var(--text)}
+.tab.on{color:var(--text);border-bottom-color:var(--accent)}
+.tab .n{font-size:12px;color:var(--faint);margin-left:4px;font-weight:500}
+main{max-width:1240px;margin:0 auto;padding:20px 20px 80px}
+
+/* Kartlar */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px}
+.card+.card{margin-top:16px}
+.card h2{margin:0;font-size:17px;font-weight:650}
+.card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.card-head p{margin:4px 0 0}
+.actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.muted{color:var(--muted)}
+.count{font-size:13px;color:var(--faint);font-weight:500;margin-left:6px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px;align-items:start}
+.grid2 .card+.card{margin-top:0}
+.span2{grid-column:1/-1}
+
+/* Butonlar */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1px solid var(--border-strong);background:var(--surface);padding:7px 13px;border-radius:8px;cursor:pointer;font-weight:550;white-space:nowrap;text-decoration:none;color:var(--text)}
+.btn:hover{background:var(--surface-2)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
+.btn.danger{color:var(--danger)}
+.btn.danger.solid{background:var(--danger);border-color:var(--danger);color:#fff}
+.btn.ghost{border-color:transparent;background:none}
+.btn.ghost:hover{background:var(--surface-2)}
+.btn.sm{padding:4px 9px;font-size:13px}
+.btn.lg{padding:11px 22px;font-size:15px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.icon-btn{border:1px solid var(--border);background:var(--surface);border-radius:6px;cursor:pointer;padding:0 6px;line-height:22px;color:var(--muted)}
+.icon-btn:hover{color:var(--text);border-color:var(--border-strong)}
+
+/* Formlar */
+input[type=text],input[type=number],input[type=date],input:not([type]),select,textarea{border:1px solid var(--border-strong);background:var(--surface);border-radius:8px;padding:7px 10px;min-width:0}
+input:focus,select:focus,textarea:focus{outline:2px solid color-mix(in srgb,var(--accent) 40%,transparent);outline-offset:0;border-color:var(--accent)}
+textarea{width:100%;resize:vertical}
+.field{display:grid;gap:4px;margin-bottom:12px}
+.field>span{font-size:13px;color:var(--muted);font-weight:550}
+.field small{color:var(--faint);font-size:12px}
+.add-row{display:grid;grid-template-columns:minmax(180px,2fr) minmax(90px,.7fr) minmax(140px,1.4fr) auto;gap:8px;margin-bottom:16px}
+
+/* Tablolar */
+.tbl-wrap{overflow-x:auto;margin:0 -20px;padding:0 20px}
+table{width:100%;border-collapse:collapse}
+th{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600;text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);white-space:nowrap}
+td{padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:middle}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover td{background:var(--surface-2)}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.c{text-align:center}
+.nowrap{white-space:nowrap}
+td.pts,td.score{font-variant-numeric:tabular-nums;font-weight:650;text-align:center;white-space:nowrap}
+td.score{font-size:15px}
+.no{color:var(--faint);font-variant-numeric:tabular-nums;width:1%;white-space:nowrap}
+.place{font-weight:650;width:1%;font-variant-numeric:tabular-nums}
+.medal{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;font-size:12px;color:#fff;font-weight:700}
+.m1{background:var(--gold)}.m2{background:var(--silver)}.m3{background:var(--bronze)}
+.pname{font-weight:600}
+.sub{color:var(--faint);font-size:12px;margin-left:6px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tag{display:inline-block;font-size:11px;font-weight:600;padding:1px 7px;border-radius:999px;background:var(--surface-2);border:1px solid var(--border);color:var(--muted);margin-left:6px;vertical-align:1px;white-space:nowrap}
+.tag.warn{background:var(--warn-soft);border-color:transparent;color:var(--warn)}
+.tag.bad{background:var(--danger-soft);border-color:transparent;color:var(--danger)}
+.row-out td{color:var(--faint)}
+.row-out .pname{text-decoration:line-through;text-decoration-color:var(--faint)}
+
+/* Eşleştirme tablosu */
+.pairings td.board{width:1%;white-space:nowrap;font-weight:650;color:var(--muted);font-variant-numeric:tabular-nums}
+.pairings td.pl{min-width:180px}
+.pairings td.pl.right{text-align:right}
+.pairings td.res{width:1%;white-space:nowrap;text-align:center}
+.plc{display:inline-flex;align-items:center;gap:0;max-width:100%;white-space:nowrap}
+.pick{white-space:nowrap}
+@media (max-width:980px){.pairings .sub{display:none}.pairings td.pl{min-width:0}}
+.pc{display:inline-block;width:12px;height:12px;border-radius:3px;border:1.5px solid var(--piece-line);margin-right:8px;flex:none}
+.pc.w{background:var(--piece-w)}.pc.k{background:var(--piece-k)}
+.pick{appearance:none;border:1px dashed var(--border-strong);background:var(--surface);border-radius:8px;padding:4px 8px;cursor:pointer;display:inline-flex;align-items:center;text-align:left}
+.pick:hover{border-color:var(--accent)}
+.pick.on{background:var(--accent-soft);border:1px solid var(--accent)}
+tr.rematch td{background:var(--warn-soft)}
+.bye-row td{color:var(--muted)}
+.bye-row td.bye-cell{color:var(--text)}
+.bye-cell .sep{color:var(--faint);margin:0 8px}
+.cseq{display:inline-flex;gap:3px;vertical-align:-2px}
+.cs{width:13px;height:13px;border-radius:3px;border:1.5px solid var(--piece-line);display:inline-block}
+.cs.w{background:var(--piece-w)}.cs.k{background:var(--piece-k)}
+.cs.x{border:1.5px dashed var(--border-strong);background:none}
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:600;font-size:12.5px;white-space:nowrap}
+.tag.bye{background:var(--accent);color:var(--accent-ink);border-color:transparent;margin-left:0;letter-spacing:.04em}
+.bye-preview{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px;padding:10px 14px;border-radius:10px;background:var(--accent-soft)}
+.notice .tag.bye{margin-right:6px}
+.abs-list{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-top:14px}
+.abs-item{display:inline-flex;align-items:center;gap:6px}
+.abs-item select{padding:3px 6px;font-size:13px}
+
+.seg{display:inline-flex;border:1px solid var(--border-strong);border-radius:8px;overflow:hidden;background:var(--surface);vertical-align:middle}
+.seg button{border:0;background:none;padding:5px 10px;cursor:pointer;font-variant-numeric:tabular-nums;font-weight:600;color:var(--muted);min-width:44px}
+.seg>*+*{border-left:1px solid var(--border)!important}
+.seg button:hover{background:var(--surface-2);color:var(--text)}
+.seg button.on{background:var(--accent);color:var(--accent-ink)}
+.seg select{border:0;border-radius:0;background:none;padding:0 4px 0 8px;cursor:pointer;color:var(--muted);font-weight:600;width:52px}
+.seg select.on{background:var(--accent);color:var(--accent-ink);width:66px}
+.seg select option{background:var(--surface);color:var(--text)}
+.seg.sm button{padding:3px 8px;min-width:0;font-size:12.5px}
+
+/* Tur çipleri */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.chip{border:1px solid var(--border-strong);background:var(--surface);border-radius:999px;padding:6px 14px;cursor:pointer;font-weight:600;display:inline-flex;align-items:center;gap:7px;color:var(--text)}
+.chip:hover{border-color:var(--accent)}
+.chip.on{background:var(--text);border-color:var(--text);color:var(--bg)}
+.chip .ok{color:var(--accent);font-size:12px}
+.chip.on .ok{color:inherit}
+.chip .dot{width:7px;height:7px;border-radius:50%;background:var(--warn)}
+.chip.next{border-style:dashed;color:var(--accent)}
+.chip.next.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);border-style:solid}
+
+.progress{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px}
+.bar{width:120px;height:6px;border-radius:99px;background:var(--surface-2);border:1px solid var(--border);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent)}
+
+.notice{border-radius:10px;padding:10px 14px;margin:0 0 14px;background:var(--accent-soft);color:var(--text)}
+.notice.warn{background:var(--warn-soft);color:var(--warn)}
+.notice.bad{background:var(--danger-soft);color:var(--danger)}
+.notice b{font-weight:650}
+
+/* Katılım */
+.att-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:8px}
+.att{display:flex;align-items:center;gap:10px;padding:7px 10px;border:1px solid var(--border);border-radius:10px;background:var(--surface)}
+.att .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:550}
+.att .sc{font-variant-numeric:tabular-nums;color:var(--muted);font-weight:600;width:28px;text-align:right}
+.att.half,.att.zero{background:var(--surface-2)}
+.att.zero .nm{color:var(--faint)}
+.pair-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid var(--border)}
+
+/* Eşitlik bozma listesi */
+.tb-list{list-style:none;margin:0 0 12px;padding:0;display:grid;gap:6px}
+.tb-list li{display:flex;align-items:center;gap:10px;padding:7px 8px 7px 12px;border:1px solid var(--border);border-radius:9px;background:var(--surface-2)}
+.tb-list .ix{font-weight:700;color:var(--accent);width:16px}
+.tb-list .tx{flex:1;min-width:0}
+.tb-list .tx small{display:block;color:var(--faint);font-size:12px}
+.legend{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:12.5px;color:var(--muted);margin-top:14px}
+.legend b{color:var(--text);font-weight:650}
+
+.help{columns:2 320px;column-gap:32px}
+.help p{margin:0 0 10px;break-inside:avoid}
+
+/* Çapraz tablo */
+.cross td.rc{text-align:center;white-space:nowrap;font-variant-numeric:tabular-nums;font-size:13px;padding:6px 8px}
+.rc .op{color:var(--muted)}
+.rc .cl{font-size:10.5px;color:var(--faint);margin:0 2px 0 1px}
+.rc .rs{font-weight:700;display:inline-block;min-width:12px}
+.rc.win .rs{color:var(--accent)}
+.rc.loss .rs{color:var(--faint)}
+
+/* Karşılama */
+.welcome{min-height:calc(100vh - 140px);display:grid;place-items:center}
+.welcome-card{max-width:520px;width:100%;text-align:center}
+.welcome-card .big{font-size:56px;line-height:1;width:84px;height:84px;margin:0 auto 18px;border-radius:22px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center}
+.welcome-card h1{margin:0 0 8px;font-size:26px}
+.welcome-card p{color:var(--muted);margin:0 auto 22px;max-width:420px}
+.welcome-card form{text-align:left;display:grid;gap:4px;margin-bottom:12px}
+
+.empty{text-align:center;padding:36px 20px;color:var(--muted)}
+.empty .ic{font-size:34px;margin-bottom:6px;color:var(--faint)}
+.empty p{margin:0 0 14px}
+
+/* Diyalog */
+dialog{border:1px solid var(--border);border-radius:14px;padding:0;background:var(--surface);color:var(--text);box-shadow:0 20px 60px rgba(0,0,0,.25);width:min(520px,calc(100vw - 32px))}
+dialog::backdrop{background:rgba(15,15,10,.45)}
+.dlg{padding:20px 22px}
+.dlg h3{margin:0 0 12px;font-size:17px}
+.dlg-body{margin-bottom:18px}
+.dlg-body p{margin:0 0 10px}
+.dlg-actions{display:flex;justify-content:flex-end;gap:8px}
+
+/* Bildirimler */
+#toasts{position:fixed;right:18px;bottom:18px;display:grid;gap:8px;z-index:50;max-width:min(420px,calc(100vw - 36px))}
+.toast{background:var(--text);color:var(--bg);padding:10px 14px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.2);font-weight:550;animation:tin .18s ease-out}
+.toast.warn{background:var(--warn-soft);color:var(--warn);border:1px solid color-mix(in srgb,var(--warn) 30%,transparent)}
+.toast.err{background:var(--danger);color:#fff}
+@keyframes tin{from{transform:translateY(6px);opacity:0}}
+@media (prefers-reduced-motion: reduce){.toast{animation:none}}
+
+.print-only,.print-title{display:none}
+
+@media (max-width:640px){
+  .top-in,.hero,main{padding-left:16px;padding-right:16px}
+  .tbl-wrap{margin:0 -16px;padding:0 16px}
+  .card{padding:16px}
+  .add-row{grid-template-columns:1fr 1fr}
+  .add-row input[name=name]{grid-column:1/-1}
+  .brand .t{display:none}
+  .save{display:none}
+  .hero h1{font-size:20px}
+}
+
+@media print{
+  @page{margin:14mm}
+  body{background:#fff;color:#000;font-size:10.5pt}
+  .no-print,.top,.hero,.actions,.seg,.btn,.chips,.icon-btn,#toasts,.pair-bar,.att-grid{display:none!important}
+  .print-only{display:inline!important}
+  .print-title{display:block!important;margin-bottom:10px}
+  .print-title h1{margin:0;font-size:16pt}
+  .print-title div{color:#444}
+  main{padding:0;max-width:none}
+  .card{border:0;box-shadow:none;padding:0;background:none}
+  .tbl-wrap{margin:0;padding:0;overflow:visible}
+  th{color:#000;border-bottom:1.5px solid #000}
+  td{border-bottom:1px solid #bbb;padding:5px 8px}
+  tbody tr:hover td{background:none}
+  tr.rematch td{background:none}
+  .pc{border-color:#000}.pc.w{background:#fff}.pc.k{background:#000}
+  .medal{color:#000;background:none!important;border:1px solid #000}
+  .pill{background:none;color:#000;border:1px solid #000}
+  .notice{display:none}
+}
+/* Logo: yazı tipinden bağımsız görsel */
+.logo,.welcome-card .big{background:url(data:image/png;base64,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) center/100% no-repeat;color:transparent;font-size:0;user-select:none}
+.welcome-card .big{border-radius:22px}
+</style>
+</head>
+<body>
+<header class="top no-print">
+  <div class="top-in">
+    <div class="brand"><div class="logo">♞</div><span class="t">Chesspresso <span class="brand-sub">Eşleştirme</span></span></div>
+    <div class="top-right">
+      <select id="tsel" class="tsel" data-change="switch-t" aria-label="Turnuva seç"></select>
+      <span id="saveState" class="save">Otomatik kaydediliyor</span>
+    </div>
+  </div>
+</header>
+<div id="hero" class="no-print"></div>
+<main id="app"></main>
+<dialog id="dlg"></dialog>
+<div id="toasts"></div>
+<input type="file" id="fileIn" accept=".json,application/json" hidden>
+
+<script id="engine">
+/* =========================================================================
+   EŞLEŞTİRME MOTORU (arayüzden bağımsız)
+   - maxWeightMatching: Edmonds "blossom" algoritması (J. van Rantwijk'in
+     mwmatching.py uygulamasının JS/BigInt uyarlaması).
+   - pairNextRound: Hollanda (Dutch) sistemi kurallarını öncelik sırasına göre
+     ağırlıklara çevirip tek seferde en iyi eşleşmeyi bulur.
+   ========================================================================= */
+const Swiss = (() => {
+  'use strict';
+
+  function maxWeightMatching(edges, maxcardinality) {
+    const nedge = edges.length;
+    if (!nedge) return [];
+    let nvertex = 0;
+    for (const [i, j] of edges) { if (i >= nvertex) nvertex = i + 1; if (j >= nvertex) nvertex = j + 1; }
+    let maxweight = 0n;
+    for (const e of edges) if (e[2] > maxweight) maxweight = e[2];
+    const endpoint = new Array(2 * nedge);
+    for (let p = 0; p < 2 * nedge; p++) endpoint[p] = edges[p >> 1][p & 1];
+    const neighbend = Array.from({ length: nvertex }, () => []);
+    for (let k = 0; k < nedge; k++) { const [i, j] = edges[k]; neighbend[i].push(2 * k + 1); neighbend[j].push(2 * k); }
+    const mate = new Array(nvertex).fill(-1);
+    const label = new Array(2 * nvertex).fill(0);
+    const labelend = new Array(2 * nvertex).fill(-1);
+    const inblossom = Array.from({ length: nvertex }, (_, i) => i);
+    const blossomparent = new Array(2 * nvertex).fill(-1);
+    const blossomchilds = new Array(2 * nvertex).fill(null);
+    const blossombase = Array.from({ length: 2 * nvertex }, (_, i) => (i < nvertex ? i : -1));
+    const blossomendps = new Array(2 * nvertex).fill(null);
+    const bestedge = new Array(2 * nvertex).fill(-1);
+    const blossombestedges = new Array(2 * nvertex).fill(null);
+    const unusedblossoms = [];
+    for (let i = nvertex; i < 2 * nvertex; i++) unusedblossoms.push(i);
+    const dualvar = new Array(2 * nvertex);
+    for (let i = 0; i < 2 * nvertex; i++) dualvar[i] = i < nvertex ? maxweight : 0n;
+    const allowedge = new Array(nedge).fill(false);
+    let queue = [];
+    const at = (arr, i) => arr[i < 0 ? i + arr.length : i];
+    const slack = k => dualvar[edges[k][0]] + dualvar[edges[k][1]] - 2n * edges[k][2];
+
+    function blossomLeaves(b, out = []) {
+      if (b < nvertex) out.push(b);
+      else for (const t of blossomchilds[b]) { if (t < nvertex) out.push(t); else blossomLeaves(t, out); }
+      return out;
+    }
+
+    function assignLabel(w, t, p) {
+      const b = inblossom[w];
+      label[w] = label[b] = t;
+      labelend[w] = labelend[b] = p;
+      bestedge[w] = bestedge[b] = -1;
+      if (t === 1) {
+        for (const v of blossomLeaves(b)) queue.push(v);
+      } else if (t === 2) {
+        const base = blossombase[b];
+        assignLabel(endpoint[mate[base]], 1, mate[base] ^ 1);
+      }
+    }
+
+    function scanBlossom(v, w) {
+      const path = [];
+      let base = -1;
+      while (v !== -1 || w !== -1) {
+        let b = inblossom[v];
+        if (label[b] & 4) { base = blossombase[b]; break; }
+        path.push(b);
+        label[b] = 5;
+        if (labelend[b] === -1) {
+          v = -1;
+        } else {
+          v = endpoint[labelend[b]];
+          b = inblossom[v];
+          v = endpoint[labelend[b]];
+        }
+        if (w !== -1) { const tmp = v; v = w; w = tmp; }
+      }
+      for (const b of path) label[b] = 1;
+      return base;
+    }
+
+    function addBlossom(base, k) {
+      let [v, w] = edges[k];
+      const bb = inblossom[base];
+      let bv = inblossom[v], bw = inblossom[w];
+      const b = unusedblossoms.pop();
+      blossombase[b] = base;
+      blossomparent[b] = -1;
+      blossomparent[bb] = b;
+      const path = [], endps = [];
+      while (bv !== bb) {
+        blossomparent[bv] = b;
+        path.push(bv);
+        endps.push(labelend[bv]);
+        v = endpoint[labelend[bv]];
+        bv = inblossom[v];
+      }
+      path.push(bb);
+      path.reverse();
+      endps.reverse();
+      endps.push(2 * k);
+      while (bw !== bb) {
+        blossomparent[bw] = b;
+        path.push(bw);
+        endps.push(labelend[bw] ^ 1);
+        w = endpoint[labelend[bw]];
+        bw = inblossom[w];
+      }
+      blossomchilds[b] = path;
+      blossomendps[b] = endps;
+      label[b] = 1;
+      labelend[b] = labelend[bb];
+      dualvar[b] = 0n;
+      for (const lv of blossomLeaves(b)) {
+        if (label[inblossom[lv]] === 2) queue.push(lv);
+        inblossom[lv] = b;
+      }
+      const bestedgeto = new Array(2 * nvertex).fill(-1);
+      for (const sb of path) {
+        let nblists;
+        if (blossombestedges[sb] === null) nblists = blossomLeaves(sb).map(x => neighbend[x].map(p => p >> 1));
+        else nblists = [blossombestedges[sb]];
+        for (const nblist of nblists) {
+          for (const k2 of nblist) {
+            let i = edges[k2][0], j = edges[k2][1];
+            if (inblossom[j] === b) { const tmp = i; i = j; j = tmp; }
+            const bj = inblossom[j];
+            if (bj !== b && label[bj] === 1 && (bestedgeto[bj] === -1 || slack(k2) < slack(bestedgeto[bj]))) bestedgeto[bj] = k2;
+          }
+        }
+        blossombestedges[sb] = null;
+        bestedge[sb] = -1;
+      }
+      blossombestedges[b] = bestedgeto.filter(k2 => k2 !== -1);
+      bestedge[b] = -1;
+      for (const k2 of blossombestedges[b]) if (bestedge[b] === -1 || slack(k2) < slack(bestedge[b])) bestedge[b] = k2;
+    }
+
+    function expandBlossom(b, endstage) {
+      for (const s of blossomchilds[b]) {
+        blossomparent[s] = -1;
+        if (s < nvertex) inblossom[s] = s;
+        else if (endstage && dualvar[s] === 0n) expandBlossom(s, endstage);
+        else for (const v of blossomLeaves(s)) inblossom[v] = s;
+      }
+      if (!endstage && label[b] === 2) {
+        const childs = blossomchilds[b], endps = blossomendps[b];
+        const entrychild = inblossom[endpoint[labelend[b] ^ 1]];
+        let j = childs.indexOf(entrychild), jstep, endptrick;
+        if (j & 1) { j -= childs.length; jstep = 1; endptrick = 0; }
+        else { jstep = -1; endptrick = 1; }
+        let p = labelend[b];
+        while (j !== 0) {
+          label[endpoint[p ^ 1]] = 0;
+          label[endpoint[at(endps, j - endptrick) ^ endptrick ^ 1]] = 0;
+          assignLabel(endpoint[p ^ 1], 2, p);
+          allowedge[at(endps, j - endptrick) >> 1] = true;
+          j += jstep;
+          p = at(endps, j - endptrick) ^ endptrick;
+          allowedge[p >> 1] = true;
+          j += jstep;
+        }
+        const bv = at(childs, j);
+        label[endpoint[p ^ 1]] = label[bv] = 2;
+        labelend[endpoint[p ^ 1]] = labelend[bv] = p;
+        bestedge[bv] = -1;
+        j += jstep;
+        while (at(childs, j) !== entrychild) {
+          const sb = at(childs, j);
+          if (label[sb] === 1) { j += jstep; continue; }
+          let found = -1;
+          for (const v of blossomLeaves(sb)) { found = v; if (label[v] !== 0) break; }
+          if (label[found] !== 0) {
+            label[found] = 0;
+            label[endpoint[mate[blossombase[sb]]]] = 0;
+            assignLabel(found, 2, labelend[found]);
+          }
+          j += jstep;
+        }
+      }
+      label[b] = labelend[b] = -1;
+      blossomchilds[b] = blossomendps[b] = null;
+      blossombase[b] = -1;
+      blossombestedges[b] = null;
+      bestedge[b] = -1;
+      unusedblossoms.push(b);
+    }
+
+    function augmentBlossom(b, v) {
+      let t = v;
+      while (blossomparent[t] !== b) t = blossomparent[t];
+      if (t >= nvertex) augmentBlossom(t, v);
+      const childs = blossomchilds[b], endps = blossomendps[b];
+      const i = childs.indexOf(t);
+      let j = i, jstep, endptrick;
+      if (i & 1) { j -= childs.length; jstep = 1; endptrick = 0; }
+      else { jstep = -1; endptrick = 1; }
+      while (j !== 0) {
+        j += jstep;
+        t = at(childs, j);
+        const p = at(endps, j - endptrick) ^ endptrick;
+        if (t >= nvertex) augmentBlossom(t, endpoint[p]);
+        j += jstep;
+        t = at(childs, j);
+        if (t >= nvertex) augmentBlossom(t, endpoint[p ^ 1]);
+        mate[endpoint[p]] = p ^ 1;
+        mate[endpoint[p ^ 1]] = p;
+      }
+      blossomchilds[b] = childs.slice(i).concat(childs.slice(0, i));
+      blossomendps[b] = endps.slice(i).concat(endps.slice(0, i));
+      blossombase[b] = blossombase[blossomchilds[b][0]];
+    }
+
+    function augmentMatching(k) {
+      const [v, w] = edges[k];
+      for (let [s, p] of [[v, 2 * k + 1], [w, 2 * k]]) {
+        for (;;) {
+          const bs = inblossom[s];
+          if (bs >= nvertex) augmentBlossom(bs, s);
+          mate[s] = p;
+          if (labelend[bs] === -1) break;
+          const t = endpoint[labelend[bs]];
+          const bt = inblossom[t];
+          s = endpoint[labelend[bt]];
+          const j = endpoint[labelend[bt] ^ 1];
+          if (bt >= nvertex) augmentBlossom(bt, j);
+          mate[j] = labelend[bt];
+          p = labelend[bt] ^ 1;
+        }
+      }
+    }
+
+    for (let stage = 0; stage < nvertex; stage++) {
+      label.fill(0);
+      bestedge.fill(-1);
+      for (let i = nvertex; i < 2 * nvertex; i++) blossombestedges[i] = null;
+      allowedge.fill(false);
+      queue = [];
+      for (let v = 0; v < nvertex; v++) if (mate[v] === -1 && label[inblossom[v]] === 0) assignLabel(v, 1, -1);
+      let augmented = false;
+      for (;;) {
+        while (queue.length && !augmented) {
+          const v = queue.pop();
+          for (const p of neighbend[v]) {
+            const k = p >> 1;
+            const w = endpoint[p];
+            if (inblossom[v] === inblossom[w]) continue;
+            let kslack = 0n;
+            if (!allowedge[k]) {
+              kslack = slack(k);
+              if (kslack <= 0n) allowedge[k] = true;
+            }
+            if (allowedge[k]) {
+              if (label[inblossom[w]] === 0) {
+                assignLabel(w, 2, p ^ 1);
+              } else if (label[inblossom[w]] === 1) {
+                const base = scanBlossom(v, w);
+                if (base >= 0) addBlossom(base, k);
+                else { augmentMatching(k); augmented = true; break; }
+              } else if (label[w] === 0) {
+                label[w] = 2;
+                labelend[w] = p ^ 1;
+              }
+            } else if (label[inblossom[w]] === 1) {
+              const b = inblossom[v];
+              if (bestedge[b] === -1 || kslack < slack(bestedge[b])) bestedge[b] = k;
+            } else if (label[w] === 0) {
+              if (bestedge[w] === -1 || kslack < slack(bestedge[w])) bestedge[w] = k;
+            }
+          }
+        }
+        if (augmented) break;
+
+        let deltatype = -1, delta = 0n, deltaedge = -1, deltablossom = -1;
+        if (!maxcardinality) {
+          deltatype = 1;
+          delta = dualvar[0];
+          for (let v = 1; v < nvertex; v++) if (dualvar[v] < delta) delta = dualvar[v];
+        }
+        for (let v = 0; v < nvertex; v++) {
+          if (label[inblossom[v]] === 0 && bestedge[v] !== -1) {
+            const d = slack(bestedge[v]);
+            if (deltatype === -1 || d < delta) { delta = d; deltatype = 2; deltaedge = bestedge[v]; }
+          }
+        }
+        for (let b = 0; b < 2 * nvertex; b++) {
+          if (blossomparent[b] === -1 && label[b] === 1 && bestedge[b] !== -1) {
+            const d = slack(bestedge[b]) / 2n;
+            if (deltatype === -1 || d < delta) { delta = d; deltatype = 3; deltaedge = bestedge[b]; }
+          }
+        }
+        for (let b = nvertex; b < 2 * nvertex; b++) {
+          if (blossombase[b] >= 0 && blossomparent[b] === -1 && label[b] === 2 && (deltatype === -1 || dualvar[b] < delta)) {
+            delta = dualvar[b]; deltatype = 4; deltablossom = b;
+          }
+        }
+        if (deltatype === -1) {
+          deltatype = 1;
+          let m = dualvar[0];
+          for (let v = 1; v < nvertex; v++) if (dualvar[v] < m) m = dualvar[v];
+          delta = m > 0n ? m : 0n;
+        }
+        for (let v = 0; v < nvertex; v++) {
+          const l = label[inblossom[v]];
+          if (l === 1) dualvar[v] -= delta;
+          else if (l === 2) dualvar[v] += delta;
+        }
+        for (let b = nvertex; b < 2 * nvertex; b++) {
+          if (blossombase[b] >= 0 && blossomparent[b] === -1) {
+            if (label[b] === 1) dualvar[b] += delta;
+            else if (label[b] === 2) dualvar[b] -= delta;
+          }
+        }
+        if (deltatype === 1) break;
+        else if (deltatype === 2) {
+          allowedge[deltaedge] = true;
+          let i = edges[deltaedge][0];
+          if (label[inblossom[i]] === 0) i = edges[deltaedge][1];
+          queue.push(i);
+        } else if (deltatype === 3) {
+          allowedge[deltaedge] = true;
+          queue.push(edges[deltaedge][0]);
+        } else if (deltatype === 4) {
+          expandBlossom(deltablossom, false);
+        }
+      }
+      if (!augmented) break;
+      for (let b = nvertex; b < 2 * nvertex; b++) {
+        if (blossomparent[b] === -1 && blossombase[b] >= 0 && label[b] === 1 && dualvar[b] === 0n) expandBlossom(b, true);
+      }
+    }
+    for (let v = 0; v < nvertex; v++) if (mate[v] >= 0) mate[v] = endpoint[mate[v]];
+    return mate;
+  }
+
+  /* ---------------- Sonuçlar ---------------- */
+  const RESULTS = {
+    '1-0': { w: 1, b: 0, played: true },
+    '0-1': { w: 0, b: 1, played: true },
+    '=':   { w: 0.5, b: 0.5, played: true },
+    '+-':  { w: 1, b: 0, played: false },   // beyaz hükmen kazandı
+    '-+':  { w: 0, b: 1, played: false },   // siyah hükmen kazandı
+    '--':  { w: 0, b: 0, played: false },   // iki oyuncu da gelmedi
+  };
+
+  const TIEBREAKS = {
+    BH1: { short: 'BH-1', name: 'Buchholz Kesik-1', desc: 'Rakiplerin puan toplamı, en düşük rakip hariç' },
+    BH:  { short: 'BH', name: 'Buchholz', desc: 'Rakiplerin puan toplamı' },
+    BHM: { short: 'BH-M', name: 'Medyan Buchholz', desc: 'En yüksek ve en düşük rakip hariç' },
+    SB:  { short: 'SB', name: 'Sonneborn-Berger', desc: 'Yenilen rakiplerin puanı + berabere kalınanların yarısı' },
+    DE:  { short: 'AM', name: 'Aralarındaki maç', desc: 'Eşit puanlıların birbirine karşı aldığı puan' },
+    WIN: { short: 'G', name: 'Galibiyet sayısı', desc: 'Masada kazanılan oyun sayısı' },
+    BLK: { short: 'S', name: 'Siyahla oynanan', desc: 'Siyah taşlarla oynanan oyun sayısı' },
+    PS:  { short: 'KP', name: 'Kademeli puan', desc: 'Her tur sonundaki puanların toplamı' },
+    ARO: { short: 'RO', name: 'Rakip ELO ortalaması', desc: 'Masada karşılaşılan rakiplerin ortalama ELO’su' },
+  };
+
+  const opp = c => (c === 'W' ? 'B' : 'W');
+  const cmpFloat = (mine, theirs) => (mine > theirs ? 'D' : mine < theirs ? 'U' : null);
+
+  function sortForSeeding(players) {
+    return [...players].sort((a, b) => (b.rating || 0) - (a.rating || 0) || String(a.name).localeCompare(String(b.name), 'tr'));
+  }
+
+  function isRoundComplete(rd) {
+    return rd.pairings.every(g => g.black == null || RESULTS[g.result]);
+  }
+
+  /* İlk `upto` turun geçmişini oyuncu bazında çıkarır. */
+  function buildHistory(t, upto) {
+    const H = new Map();
+    for (const p of t.players) {
+      H.set(p.id, { id: p.id, p, score: 0, colors: [], opponents: new Set(), hadBye: false, forfeitWin: false, perRound: [] });
+    }
+    const byePts = Number(t.settings.byePoints);
+    const n = Math.min(upto, t.rounds.length);
+    for (let r = 0; r < n; r++) {
+      const rd = t.rounds[r];
+      const before = new Map();
+      for (const h of H.values()) before.set(h.id, h.score);
+      const entries = new Map();
+      for (const g of rd.pairings) {
+        const hw = H.get(g.white);
+        if (!hw) continue;
+        if (g.black == null) {
+          entries.set(hw.id, { round: r + 1, type: 'bye', opp: null, color: null, pts: byePts, float: 'D' });
+          hw.hadBye = true;
+          continue;
+        }
+        const hb = H.get(g.black);
+        if (!hb) continue;
+        const fw = cmpFloat(before.get(hw.id), before.get(hb.id));
+        const fb = cmpFloat(before.get(hb.id), before.get(hw.id));
+        const res = RESULTS[g.result];
+        if (!res) {
+          entries.set(hw.id, { round: r + 1, type: 'pending', opp: hb.id, color: 'W', pts: 0, float: fw });
+          entries.set(hb.id, { round: r + 1, type: 'pending', opp: hw.id, color: 'B', pts: 0, float: fb });
+          continue;
+        }
+        const type = res.played ? 'game' : 'forfeit';
+        entries.set(hw.id, { round: r + 1, type, opp: hb.id, color: 'W', pts: res.w, float: fw, result: g.result });
+        entries.set(hb.id, { round: r + 1, type, opp: hw.id, color: 'B', pts: res.b, float: fb, result: g.result });
+        if (res.played) {
+          hw.colors.push('W'); hb.colors.push('B');
+          hw.opponents.add(hb.id); hb.opponents.add(hw.id);
+        } else {
+          // Hükmen galip gelen oyuncu masada o renkle oturmuştu; renk dengesinde sayılır.
+          if (res.w === 1) { hw.forfeitWin = true; hw.colors.push('W'); }
+          if (res.b === 1) { hb.forfeitWin = true; hb.colors.push('B'); }
+        }
+      }
+      for (const a of rd.absent || []) {
+        if (!H.has(a.id) || entries.has(a.id)) continue;
+        const half = a.type === 'half';
+        entries.set(a.id, { round: r + 1, type: half ? 'half' : 'zero', opp: null, color: null, pts: half ? 0.5 : 0, float: null });
+      }
+      for (const h of H.values()) {
+        const e = entries.get(h.id) || { round: r + 1, type: 'out', opp: null, color: null, pts: 0, float: null };
+        h.score += e.pts;
+        e.after = h.score;
+        h.perRound.push(e);
+      }
+    }
+    return H;
+  }
+
+  /* FIDE renk tercihi: 3 = mutlak, 2 = güçlü, 1 = hafif, 0 = yok */
+  function colorPref(h) {
+    const cs = h.colors;
+    if (!cs.length) return { color: null, strength: 0, diff: 0 };
+    let diff = 0;
+    for (const c of cs) diff += c === 'W' ? 1 : -1;
+    const last = cs[cs.length - 1], prev = cs[cs.length - 2];
+    if (diff > 1) return { color: 'B', strength: 3, diff };
+    if (diff < -1) return { color: 'W', strength: 3, diff };
+    if (prev && last === prev) return { color: opp(last), strength: 3, diff };
+    if (diff === 1) return { color: 'B', strength: 2, diff };
+    if (diff === -1) return { color: 'W', strength: 2, diff };
+    return { color: opp(last), strength: 1, diff };
+  }
+
+  /* a: üst sıradaki oyuncu. Dönüş: a'nın rengi */
+  function allocateColor(a, b, initialColor) {
+    const pa = a.pref, pb = b.pref;
+    if (pa.color && pb.color && pa.color !== pb.color) return pa.color;
+    if (pa.color && !pb.color) return pa.color;
+    if (!pa.color && pb.color) return opp(pb.color);
+    if (pa.color && pb.color) {
+      if (pa.strength !== pb.strength) return pa.strength > pb.strength ? pa.color : opp(pa.color);
+      if (pa.strength === 3 && Math.abs(pa.diff) !== Math.abs(pb.diff)) return Math.abs(pa.diff) > Math.abs(pb.diff) ? pa.color : opp(pa.color);
+      const ca = a.h.colors, cb = b.h.colors;
+      for (let k = 1; k <= Math.min(ca.length, cb.length); k++) {
+        const x = ca[ca.length - k], y = cb[cb.length - k];
+        if (x !== y) return opp(x);
+      }
+      return pa.color;
+    }
+    return (a.no % 2 === 1) ? initialColor : opp(initialColor);
+  }
+
+  /* Ceza seviyeleri, düşükten yükseğe. Her seviye altındakilerin toplamından ağır basar.
+     Dengeli: sıra uyumu < tekrar kayma < hafif renk < puan farkı < güçlü renk < bay puanı < mutlak renk/bay hakkı < tekrar eşleşme
+     FIDE:    sıra uyumu < tekrar kayma < renk (hafif 1, güçlü 3) < puan farkı < bay puanı < mutlak renk/bay hakkı < tekrar eşleşme */
+  const LEVELS = {
+    balanced: { rank: 0, float: 1, mild: 2, score: 3, strong: 4, byeS: 5, abs: 6, rem: 7, count: 8 },
+    fide: { rank: 0, float: 1, mild: 2, strong: 2, score: 3, byeS: 4, abs: 5, rem: 6, count: 7 },
+  };
+  function makeWeigher(n, levelMax) {
+    const M = BigInt(Math.floor((n + 1) / 2) + 1);
+    const scales = [];
+    let acc = 0n;
+    for (const mx of levelMax) {
+      const s = acc + 1n;
+      scales.push(s);
+      acc += M * BigInt(mx) * s;
+    }
+    const BASE = acc + 1n;
+    return pen => {
+      let w = BASE;
+      for (let k = 0; k < pen.length; k++) if (pen[k]) w -= BigInt(pen[k]) * scales[k];
+      return w;
+    };
+  }
+
+  function pairNextRound(t) {
+    const rIdx = t.rounds.length;
+    if (rIdx > 0 && !isRoundComplete(t.rounds[rIdx - 1])) throw new Error(`${rIdx}. turda sonucu girilmemiş masalar var.`);
+    const H = buildHistory(t, rIdx);
+    const pend = t.pending || {};
+    const absent = [], pool = [];
+    for (const p of t.players) {
+      if (p.withdrawn) continue;
+      const st = pend[p.id];
+      if (st === 'half' || st === 'zero') absent.push({ id: p.id, type: st });
+      else pool.push(H.get(p.id));
+    }
+    if (!pool.length) throw new Error('Bu turda eşleştirilecek oyuncu yok.');
+    pool.sort((a, b) => b.score - a.score || (a.p.no || 0) - (b.p.no || 0));
+
+    const infos = pool.map((h, idx) => {
+      const last = h.perRound[h.perRound.length - 1];
+      return {
+        h, idx, no: h.p.no || idx + 1,
+        s: Math.round(h.score * 2),
+        pref: colorPref(h),
+        df: !!last && last.float === 'D',
+        uf: !!last && last.float === 'U',
+        byeBad: h.hadBye || h.forfeitWin,
+      };
+    });
+    const groups = [];
+    let prevS = null;
+    for (const inf of infos) {
+      if (inf.s !== prevS) { groups.push([]); prevS = inf.s; }
+      const g = groups[groups.length - 1];
+      inf.g = groups.length - 1;
+      inf.pos = g.length;
+      g.push(inf);
+    }
+    for (const inf of infos) inf.gsize = groups[inf.g].length;
+
+    const n = infos.length;
+    const odd = n % 2 === 1;
+    const sMin = infos[n - 1].s;
+    const spread = infos[0].s - sMin;
+    const fide = t.settings.colorPriority === 'fide';
+    const L = fide ? LEVELS.fide : LEVELS.balanced;
+    const levelMax = new Array(L.count).fill(0);
+    levelMax[L.rank] = 3 * n + 3;
+    levelMax[L.float] = 2;
+    levelMax[L.mild] = fide ? 3 : 1;
+    levelMax[L.strong] = fide ? 3 : 1;
+    levelMax[L.score] = spread * spread + 1;
+    levelMax[L.byeS] = spread + 1;
+    levelMax[L.abs] = 2;
+    levelMax[L.rem] = 1;
+    const weigh = makeWeigher(n, levelMax);
+    const anyEligible = infos.some(i => !i.byeBad);
+
+    const pairPen = (a, b, played) => {
+      const pen = new Array(L.count).fill(0);
+      if (played) pen[L.rem] = 1;
+      const d = a.s - b.s;
+      const pa = a.pref, pb = b.pref;
+      if (pa.color && pa.color === pb.color) {
+        // İkisi de aynı rengi istiyor: zayıf tercihli olan istemediği rengi alır.
+        const weaker = Math.min(pa.strength, pb.strength);
+        if (weaker === 3) pen[L.abs] = 1;
+        if (weaker >= 2) pen[L.strong] += fide ? 3 : 1;
+        else pen[L.mild] += 1;
+      }
+      if (d > 0) {
+        pen[L.score] = d * d;
+        pen[L.float] = (a.df ? 1 : 0) + (b.uf ? 1 : 0);
+        pen[L.rank] = 2 * (a.gsize - 1 - a.pos) + b.pos;
+      } else {
+        pen[L.rank] = Math.abs((b.pos - a.pos) - Math.floor(a.gsize / 2));
+      }
+      return pen;
+    };
+    const byePen = a => {
+      const pen = new Array(L.count).fill(0);
+      pen[L.rank] = 2 * (a.gsize - 1 - a.pos);
+      pen[L.float] = a.df ? 1 : 0;
+      pen[L.byeS] = a.s - sMin;
+      pen[L.abs] = (a.byeBad && anyEligible) ? 1 : 0;
+      return pen;
+    };
+
+    const solve = allowRematch => {
+      const edges = [];
+      for (let i = 0; i < n; i++) {
+        for (let j = i + 1; j < n; j++) {
+          const played = infos[i].h.opponents.has(infos[j].h.id);
+          if (played && !allowRematch) continue;
+          edges.push([i, j, weigh(pairPen(infos[i], infos[j], played))]);
+        }
+        if (odd) edges.push([i, n, weigh(byePen(infos[i]))]);
+      }
+      const total = odd ? n + 1 : n;
+      if (!edges.length) return null;
+      const mate = maxWeightMatching(edges, true);
+      if (mate.length < total) return null;
+      for (let v = 0; v < total; v++) if (mate[v] == null || mate[v] < 0) return null;
+      return mate;
+    };
+
+    const warnings = [];
+    let mate = solve(false);
+    if (!mate) {
+      mate = solve(true);
+      if (mate) warnings.push('Bazı oyuncular daha önce karşılaştıkları rakiple tekrar eşleşti (başka çözüm yoktu).');
+    }
+    if (!mate) throw new Error('Eşleştirme bulunamadı.');
+
+    const initialColor = t.initialColor || 'W';
+    const pairs = [];
+    let bye = null;
+    for (let v = 0; v < n; v++) {
+      const m = mate[v];
+      if (m === n) { bye = infos[v]; continue; }
+      if (m > v) {
+        const a = infos[v], b = infos[m];
+        if (a.pref.color && a.pref.color === b.pref.color && Math.min(a.pref.strength, b.pref.strength) === 3) {
+          warnings.push(`${a.h.p.name} – ${b.h.p.name}: iki oyuncunun da mutlak renk tercihi aynıydı.`);
+        }
+        const ac = allocateColor(a, b, initialColor);
+        pairs.push(ac === 'W' ? { w: a, b } : { w: b, b: a });
+      }
+    }
+    pairs.sort((x, y) =>
+      (Math.max(y.w.s, y.b.s) - Math.max(x.w.s, x.b.s)) ||
+      ((y.w.s + y.b.s) - (x.w.s + x.b.s)) ||
+      (Math.min(x.w.idx, x.b.idx) - Math.min(y.w.idx, y.b.idx)));
+    const pairings = pairs.map(p => ({ white: p.w.h.id, black: p.b.h.id, result: null }));
+    if (bye) {
+      if (bye.byeBad) warnings.push(`${bye.h.p.name} daha önce bay geçmiş olmasına rağmen tekrar bay geçiyor.`);
+      pairings.push({ white: bye.h.id, black: null, result: 'BYE' });
+    }
+    return { pairings, absent, warnings };
+  }
+
+  /* Sıralama ve eşitlik bozma */
+  function computeStandings(t, upto, keys) {
+    keys = keys || t.settings.tiebreaks || [];
+    const H = buildHistory(t, upto);
+    const rows = t.players.map(p => ({ p, h: H.get(p.id), pts: H.get(p.id).score, tb: {} }));
+    const counted = e => e.type !== 'pending';
+    const oppScore = (e, h) => (e.type === 'game' ? H.get(e.opp).score : h.score);
+    const sum = a => a.reduce((x, y) => x + y, 0);
+    const bhList = h => h.perRound.filter(counted).map(e => oppScore(e, h)).sort((x, y) => x - y);
+    const statics = {
+      BH: h => sum(bhList(h)),
+      BH1: h => sum(bhList(h).slice(1)),
+      BHM: h => { const l = bhList(h); return l.length > 2 ? sum(l.slice(1, -1)) : 0; },
+      SB: h => sum(h.perRound.filter(counted).map(e => e.pts * oppScore(e, h))),
+      WIN: h => h.perRound.filter(e => e.type === 'game' && e.pts === 1).length,
+      BLK: h => h.perRound.filter(e => e.type === 'game' && e.color === 'B').length,
+      PS: h => { let c = 0, s = 0; for (const e of h.perRound) { c += e.pts; s += c; } return s; },
+      ARO: h => {
+        const r = h.perRound.filter(e => e.type === 'game').map(e => Number(H.get(e.opp).p.rating) || 0).filter(x => x > 0);
+        return r.length ? Math.round(sum(r) / r.length) : 0;
+      },
+    };
+    for (const r of rows) for (const k of keys) if (statics[k]) r.tb[k] = statics[k](r.h);
+
+    const no = r => r.p.no || 9999;
+    const splitRuns = (arr, eq) => {
+      const out = [];
+      for (const x of arr) {
+        const last = out[out.length - 1];
+        if (last && eq(last[last.length - 1], x)) last.push(x); else out.push([x]);
+      }
+      return out;
+    };
+    const metIn = (h, id) => h.perRound.some(e => (e.type === 'game' || e.type === 'forfeit') && e.opp === id);
+    const computeDE = run => {
+      for (const r of run) r.tb.DE = null;
+      if (run.length < 2) return;
+      for (let i = 0; i < run.length; i++)
+        for (let j = i + 1; j < run.length; j++)
+          if (!metIn(run[i].h, run[j].p.id)) return;
+      const ids = new Set(run.map(r => r.p.id));
+      for (const r of run) r.tb.DE = sum(r.h.perRound.filter(e => (e.type === 'game' || e.type === 'forfeit') && ids.has(e.opp)).map(e => e.pts));
+    };
+
+    rows.sort((a, b) => b.pts - a.pts || no(a) - no(b));
+    let runs = splitRuns(rows, (a, b) => a.pts === b.pts);
+    for (const k of keys) {
+      const next = [];
+      for (const run of runs) {
+        if (k === 'DE') computeDE(run);
+        if (run.length > 1) run.sort((a, b) => (b.tb[k] ?? 0) - (a.tb[k] ?? 0) || no(a) - no(b));
+        next.push(...splitRuns(run, (a, b) => (a.tb[k] ?? 0) === (b.tb[k] ?? 0)));
+      }
+      runs = next;
+    }
+    const out = [];
+    runs.forEach(run => {
+      const place = out.length + 1;
+      const label = run.length > 1 ? `${place}–${place + run.length - 1}` : String(place);
+      run.forEach(r => { r.place = place; r.placeLabel = label; r.shared = run.length > 1; out.push(r); });
+    });
+    return out;
+  }
+
+  return { maxWeightMatching, RESULTS, TIEBREAKS, buildHistory, colorPref, pairNextRound, computeStandings, sortForSeeding, isRoundComplete };
+})();
+if (typeof module !== 'undefined') module.exports = Swiss;
+</script>
+
+<script id="pdf">
+/* =========================================================================
+   PDF ÜRETİCİ (dış kütüphane ve internet gerektirmez)
+   Standart Helvetica yazı tipi + Türkçe harfler için özel kodlama.
+   ========================================================================= */
+const PdfKit = (() => {
+  'use strict';
+  const ASCII = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
+  const REG = {}, BOLD = {};
+  const fill = (tbl, widths, extra) => { for (let i = 0; i < ASCII.length; i++) tbl[ASCII[i]] = widths[i]; Object.assign(tbl, extra); };
+  fill(REG, [278, 278, 355, 556, 556, 889, 667, 191, 333, 333, 389, 584, 278, 333, 278, 278, 556, 556, 556, 556, 556, 556, 556, 556, 556, 556,
+    278, 278, 584, 584, 584, 556, 1015, 667, 667, 722, 722, 667, 611, 778, 722, 278, 500, 667, 556, 833, 722, 778, 667, 778, 722, 667, 611, 722,
+    667, 944, 667, 667, 611, 278, 278, 278, 469, 556, 333, 556, 556, 500, 556, 556, 278, 556, 556, 222, 222, 500, 222, 833, 556, 556, 556, 556,
+    333, 500, 278, 556, 500, 722, 500, 500, 500, 334, 260, 334, 584],
+  { 'Ç': 722, 'ç': 500, 'Ğ': 778, 'ğ': 556, 'İ': 278, 'ı': 278, 'Ö': 778, 'ö': 556, 'Ş': 667, 'ş': 500, 'Ü': 722, 'ü': 556, '½': 834, '–': 556, '—': 1000, '…': 1000, '·': 278, '•': 350, '‘': 222, '’': 222, '“': 333, '”': 333 });
+  fill(BOLD, [278, 333, 474, 556, 556, 889, 722, 238, 333, 333, 389, 584, 278, 333, 278, 278, 556, 556, 556, 556, 556, 556, 556, 556, 556, 556,
+    333, 333, 584, 584, 584, 611, 975, 722, 722, 722, 722, 667, 611, 778, 722, 278, 556, 722, 611, 833, 722, 778, 667, 778, 722, 667, 611, 722,
+    667, 944, 667, 667, 611, 333, 278, 333, 584, 556, 333, 556, 611, 556, 611, 556, 333, 611, 611, 278, 278, 556, 278, 889, 611, 611, 611, 611,
+    389, 556, 333, 611, 556, 778, 556, 556, 500, 389, 280, 389, 584],
+  { 'Ç': 722, 'ç': 556, 'Ğ': 778, 'ğ': 611, 'İ': 278, 'ı': 278, 'Ö': 778, 'ö': 611, 'Ş': 667, 'ş': 556, 'Ü': 722, 'ü': 611, '½': 834, '–': 556, '—': 1000, '…': 1000, '·': 278, '•': 350, '‘': 278, '’': 278, '“': 500, '”': 500 });
+  // WinAnsi'de olmayan Türkçe harfler, kodlamadaki boş yerlere yerleştirilir.
+  const SPECIAL = { 'ı': 128, 'Ğ': 129, 'ğ': 141, 'Ş': 143, 'ş': 144, 'İ': 157, '…': 133, '–': 150, '—': 151, '‘': 145, '’': 146, '“': 147, '”': 148, '•': 149 };
+  const ENCODING = '<< /Type /Encoding /BaseEncoding /WinAnsiEncoding /Differences [128 /dotlessi 129 /Gbreve 141 /gbreve 143 /Scedilla 144 /scedilla 157 /Idotaccent] >>';
+
+  const clean = s => String(s ?? '').replace(/−/g, '-').replace(/[  ]/g, ' ');
+  function code(ch) {
+    const c = ch.charCodeAt(0);
+    if (c >= 32 && c < 127) return c;
+    if (SPECIAL[ch] != null) return SPECIAL[ch];
+    if (c >= 160 && c <= 255) return c;
+    const b = ch.normalize('NFD').charCodeAt(0);
+    return b >= 32 && b < 127 ? b : 63;
+  }
+  function pdfStr(s) {
+    let out = '';
+    for (const ch of clean(s)) {
+      const c = code(ch);
+      if (c === 40 || c === 41 || c === 92) out += '\\' + String.fromCharCode(c);
+      else if (c < 32 || c > 126) out += '\\' + c.toString(8).padStart(3, '0');
+      else out += String.fromCharCode(c);
+    }
+    return out;
+  }
+  function width(s, size, bold) {
+    const T = bold ? BOLD : REG;
+    let w = 0;
+    for (const ch of clean(s)) {
+      let v = T[ch];
+      if (v == null) v = T[ch.normalize('NFD')[0]];
+      w += v == null ? 556 : v;
+    }
+    return w * size / 1000;
+  }
+  function fit(s, maxW, size, bold) {
+    s = clean(s);
+    if (width(s, size, bold) <= maxW) return s;
+    const chars = [...s];
+    while (chars.length && width(chars.join('') + '…', size, bold) > maxW) chars.pop();
+    return chars.join('').trimEnd() + '…';
+  }
+  const num = v => String(Math.round(v * 100) / 100);
+  const rgb = c => c.map(num).join(' ');
+  const hexText = s => { let h = 'FEFF'; for (let i = 0; i < s.length; i++) h += s.charCodeAt(i).toString(16).padStart(4, '0'); return `<${h.toUpperCase()}>`; };
+
+  function create() {
+    const pages = [];
+    let cur = null;
+    const doc = {
+      W: 595.28, H: 841.89, pages,
+      addPage(landscape) {
+        cur = { W: landscape ? 841.89 : 595.28, H: landscape ? 595.28 : 841.89, ops: [] };
+        pages.push(cur);
+        doc.W = cur.W; doc.H = cur.H;
+      },
+      usePage(i) { cur = pages[i]; doc.W = cur.W; doc.H = cur.H; },
+      text(x, y, s, o = {}) {
+        const size = o.size || 10, bold = !!o.bold;
+        s = clean(s);
+        if (!s) return;
+        const w = width(s, size, bold);
+        if (o.align === 'right') x -= w; else if (o.align === 'center') x -= w / 2;
+        cur.ops.push(`BT ${rgb(o.color || [0, 0, 0])} rg /${bold ? 'F2' : 'F1'} ${num(size)} Tf 1 0 0 1 ${num(x)} ${num(cur.H - y)} Tm (${pdfStr(s)}) Tj ET`);
+      },
+      line(x1, y1, x2, y2, o = {}) {
+        cur.ops.push(`${rgb(o.color || [0, 0, 0])} RG ${num(o.width || 0.5)} w ${num(x1)} ${num(cur.H - y1)} m ${num(x2)} ${num(cur.H - y2)} l S`);
+      },
+      rect(x, y, w, h, color) {
+        cur.ops.push(`${rgb(color)} rg ${num(x)} ${num(cur.H - y - h)} ${num(w)} ${num(h)} re f`);
+      },
+      output(title) {
+        const objs = [null, null];
+        const add = s => { objs.push(s); return objs.length; };
+        const f1 = add(`<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding ${ENCODING} >>`);
+        const f2 = add(`<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding ${ENCODING} >>`);
+        const kids = [];
+        for (const p of pages) {
+          const content = p.ops.join('\n');
+          const c = add(`<< /Length ${content.length} >>\nstream\n${content}\nendstream`);
+          kids.push(add(`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${num(p.W)} ${num(p.H)}] /Resources << /Font << /F1 ${f1} 0 R /F2 ${f2} 0 R >> >> /Contents ${c} 0 R >>`));
+        }
+        objs[0] = '<< /Type /Catalog /Pages 2 0 R >>';
+        objs[1] = `<< /Type /Pages /Kids [${kids.map(k => k + ' 0 R').join(' ')}] /Count ${kids.length} >>`;
+        const info = add(`<< /Title ${hexText(title || '')} /Producer (Chesspresso Eslestirme) >>`);
+        let out = '%PDF-1.4\n%âãÏÓ\n';
+        const offs = [];
+        objs.forEach((o, i) => { offs.push(out.length); out += `${i + 1} 0 obj\n${o}\nendobj\n`; });
+        const xref = out.length;
+        out += `xref\n0 ${objs.length + 1}\n0000000000 65535 f \n`;
+        for (const o of offs) out += String(o).padStart(10, '0') + ' 00000 n \n';
+        out += `trailer\n<< /Size ${objs.length + 1} /Root 1 0 R /Info ${info} 0 R >>\nstartxref\n${xref}\n%%EOF\n`;
+        const bytes = new Uint8Array(out.length);
+        for (let i = 0; i < out.length; i++) bytes[i] = out.charCodeAt(i) & 255;
+        return bytes;
+      },
+    };
+    return doc;
+  }
+  return { create, width, fit };
+})();
+</script>
+
+<script>
+/* =========================================================================
+   ARAYÜZ
+   ========================================================================= */
+(() => {
+'use strict';
+const S = Swiss;
+const APP_VERSION = '1.0.0';
+const LS_KEY = 'isvicre-satranc-v1'; // eski sürümlerle aynı anahtar: kayıtlı turnuvalar korunur
+const $ = (s, el = document) => el.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+const fmtPts = x => {
+  x = Number(x) || 0;
+  const i = Math.floor(x + 1e-9);
+  const half = Math.abs(x - i - 0.5) < 1e-9;
+  return half ? (i === 0 ? '½' : i + '½') : String(Math.round(x * 100) / 100).replace('.', ',');
+};
+const fmtTb = (k, v) => {
+  if (v == null) return '';
+  if (k === 'WIN' || k === 'BLK' || k === 'ARO') return String(v);
+  if (k === 'SB') return String(Math.round(v * 100) / 100).replace('.', ',');
+  return fmtPts(v);
+};
+const RES_LABEL = { '1-0': '1–0', '0-1': '0–1', '=': '½–½', '+-': '+/−', '-+': '−/+', '--': '−/−' };
+const FLIP = { '1-0': '0-1', '0-1': '1-0', '=': '=', '+-': '-+', '-+': '+-', '--': '--' };
+
+let db = { tournaments: {}, order: [], activeId: null };
+let storageOk = true;
+const ui = { tab: 'players', round: null, edit: false, sel: null, standRound: null, focusAdd: false };
+
+/* ---------- Kayıt ---------- */
+function load() {
+  try {
+    const raw = localStorage.getItem(LS_KEY);
+    if (raw) { const d = JSON.parse(raw); if (d && d.tournaments) db = d; }
+    const u = JSON.parse(localStorage.getItem(LS_KEY + ':ui') || 'null');
+    if (u && u.tab) ui.tab = u.tab;
+  } catch (e) { storageOk = false; }
+  db.order = (db.order || []).filter(id => db.tournaments[id]);
+  for (const id of Object.keys(db.tournaments)) if (!db.order.includes(id)) db.order.push(id);
+  if (!db.tournaments[db.activeId]) db.activeId = db.order[0] || null;
+}
+function save() {
+  try { localStorage.setItem(LS_KEY, JSON.stringify(db)); storageOk = true; }
+  catch (e) { storageOk = false; }
+  renderSaveState();
+}
+function saveUi() { try { localStorage.setItem(LS_KEY + ':ui', JSON.stringify({ tab: ui.tab })); } catch (e) { /* önemli değil */ } }
+function renderSaveState() {
+  const el = $('#saveState');
+  el.className = storageOk ? 'save' : 'save err';
+  el.textContent = storageOk ? 'Otomatik kaydedildi' : 'Tarayıcıya kaydedilemiyor — yedek alın';
+}
+const T = () => db.tournaments[db.activeId];
+function commit() { const t = T(); if (t) t.updatedAt = Date.now(); save(); render(); }
+
+/* ---------- Yardımcılar ---------- */
+function toast(msg, type = '') {
+  const el = document.createElement('div');
+  el.className = 'toast ' + type;
+  el.textContent = msg;
+  $('#toasts').appendChild(el);
+  setTimeout(() => el.remove(), type ? 6500 : 2800);
+}
+function dialog({ title, html, ok = 'Tamam', cancel = 'Vazgeç', danger = false }) {
+  return new Promise(resolve => {
+    const d = $('#dlg');
+    d.innerHTML = `<form method="dialog" class="dlg"><h3>${esc(title)}</h3><div class="dlg-body">${html}</div>
+      <div class="dlg-actions">${cancel ? `<button type="button" class="btn ghost" data-act="close-dlg">${esc(cancel)}</button>` : ''}
+      <button value="ok" class="btn ${danger ? 'danger solid' : 'primary'}">${esc(ok)}</button></div></form>`;
+    d.returnValue = '';
+    d.onclose = () => {
+      if (d.returnValue === 'ok') resolve(Object.fromEntries(new FormData(d.querySelector('form'))));
+      else resolve(null);
+    };
+    d.showModal();
+    const f = d.querySelector('input,textarea,select');
+    if (f) { f.focus(); if (f.select) f.select(); }
+  });
+}
+const confirmDlg = (title, text, ok = 'Evet', danger = true) => dialog({ title, html: `<p>${text}</p>`, ok, danger }).then(r => !!r);
+function download(name, text, mime) {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([text], { type: mime }));
+  a.download = name;
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+}
+const slug = s => String(s || 'turnuva').toLocaleLowerCase('tr').replace(/[çğıöşü]/g, c => ({ 'ç': 'c', 'ğ': 'g', 'ı': 'i', 'ö': 'o', 'ş': 's', 'ü': 'u' }[c])).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'turnuva';
+const pmapOf = t => Object.fromEntries(t.players.map(p => [p.id, p]));
+const started = t => t.rounds.length > 0;
+const nextNo = t => t.players.reduce((m, p) => Math.max(m, p.no || 0), 0) + 1;
+
+/* ---------- Turnuva işlemleri ---------- */
+function createTournament(name, rounds) {
+  const t = {
+    id: uid(), name: name || 'Yeni Turnuva', place: '', date: new Date().toISOString().slice(0, 10), arbiter: '',
+    settings: { rounds: Math.max(1, Math.min(30, rounds || 5)), byePoints: 1, firstColor: 'W', colorPriority: 'balanced', tiebreaks: ['BH1', 'BH', 'SB', 'WIN'] },
+    players: [], rounds: [], pending: {}, initialColor: null, createdAt: Date.now(), updatedAt: Date.now(),
+  };
+  db.tournaments[t.id] = t;
+  db.order.push(t.id);
+  db.activeId = t.id;
+  ui.tab = 'players'; ui.round = null; ui.standRound = null; ui.edit = false;
+  saveUi();
+  return t;
+}
+async function newTournamentDialog() {
+  const r = await dialog({
+    title: 'Yeni turnuva',
+    html: `<label class="field"><span>Turnuva adı</span><input name="name" required placeholder="ör. Kulüp Hızlı Satranç Turnuvası"></label>
+           <label class="field"><span>Tur sayısı</span><input name="rounds" type="number" min="1" max="30" value="5"></label>`,
+    ok: 'Oluştur',
+  });
+  if (!r) { renderHeader(); return; }
+  createTournament(r.name.trim(), parseInt(r.rounds, 10));
+  commit();
+}
+
+function addPlayer(t, name, rating, club) {
+  name = String(name || '').trim();
+  if (!name) return null;
+  const p = { id: uid(), name, rating: Math.max(0, parseInt(rating, 10) || 0), club: String(club || '').trim(), no: nextNo(t), withdrawn: false };
+  t.players.push(p);
+  return p;
+}
+function parseLine(line) {
+  const parts = line.split(/\t|;|,/).map(s => s.trim()).filter(Boolean);
+  if (!parts.length) return null;
+  let name = parts[0], rating = 0;
+  const club = [];
+  if (parts.length === 1) {
+    const m = name.match(/^(.*?)\s+(\d{3,4})$/);
+    if (m) { name = m[1]; rating = +m[2]; }
+  }
+  for (const x of parts.slice(1)) {
+    if (!rating && /^\d{1,4}$/.test(x)) rating = +x; else club.push(x);
+  }
+  return { name, rating, club: club.join(', ') };
+}
+async function bulkAdd() {
+  const r = await dialog({
+    title: 'Toplu oyuncu ekle',
+    html: `<p class="muted">Her satıra bir oyuncu yazın: <b>Ad Soyad, ELO, Kulüp</b>. Excel'den kopyalayıp yapıştırabilirsiniz (sekme, virgül veya noktalı virgül ile ayrılmış).</p>
+           <textarea name="list" rows="10" placeholder="Ahmet Yılmaz, 1845, Ankara SK&#10;Elif Kaya, 1790&#10;Mehmet Demir"></textarea>`,
+    ok: 'Ekle',
+  });
+  if (!r) return;
+  const t = T();
+  let c = 0;
+  for (const line of r.list.split(/\r?\n/)) {
+    const x = parseLine(line);
+    if (x && addPlayer(t, x.name, x.rating, x.club)) c++;
+  }
+  if (c) { commit(); toast(`${c} oyuncu eklendi`); if (started(t)) toast('Geç katılan oyuncular önceki turlardan 0 puan alır.', 'warn'); }
+}
+function addSamples() {
+  const t = T();
+  const list = [['Zeynep Çelik', 1985, 'Ankara SK'], ['Deniz Aydın', 1910, 'İzmir SK'], ['Ahmet Yılmaz', 1845, 'Ankara SK'], ['Elif Kaya', 1790, 'Bursa SK'],
+    ['Mehmet Demir', 1720, 'İstanbul SK'], ['Can Şahin', 1650, 'İzmir SK'], ['Ayşe Arslan', 1602, 'Eskişehir SK'], ['Burak Koç', 1550, 'Bursa SK'],
+    ['Emre Öztürk', 1480, 'Ankara SK'], ['Selin Kurt', 1435, 'İstanbul SK'], ['Kerem Aslan', 1388, 'Konya SK'], ['Ece Polat', 1320, 'İzmir SK'],
+    ['Mert Güneş', 1275, 'Antalya SK'], ['Derya Yıldız', 1210, 'Konya SK'], ['Onur Kaplan', 0, 'Antalya SK']];
+  for (const [n, r, c] of list) addPlayer(t, n, r, c);
+  commit();
+  toast('15 örnek oyuncu eklendi');
+}
+async function editPlayer(id) {
+  const t = T();
+  const p = t.players.find(x => x.id === id);
+  if (!p) return;
+  const r = await dialog({
+    title: 'Oyuncuyu düzenle',
+    html: `<label class="field"><span>Ad Soyad</span><input name="name" required value="${esc(p.name)}"></label>
+           <label class="field"><span>ELO / UKD</span><input name="rating" type="number" min="0" max="3500" value="${p.rating || ''}"></label>
+           <label class="field"><span>Kulüp / Şehir</span><input name="club" value="${esc(p.club)}"></label>`,
+    ok: 'Kaydet',
+  });
+  if (!r) return;
+  p.name = r.name.trim() || p.name;
+  p.rating = Math.max(0, parseInt(r.rating, 10) || 0);
+  p.club = r.club.trim();
+  commit();
+}
+function playerUsed(t, id) {
+  return t.rounds.some(rd => rd.pairings.some(g => g.white === id || g.black === id) || (rd.absent || []).some(a => a.id === id));
+}
+async function deletePlayer(id) {
+  const t = T();
+  const p = t.players.find(x => x.id === id);
+  if (!p) return;
+  if (playerUsed(t, id)) { toast('Bu oyuncu turlarda yer aldı; silmek yerine "Çekil" kullanın.', 'warn'); return; }
+  if (!await confirmDlg('Oyuncuyu sil', `<b>${esc(p.name)}</b> listeden silinsin mi?`, 'Sil')) return;
+  t.players = t.players.filter(x => x.id !== id);
+  delete t.pending[id];
+  commit();
+}
+function toggleWithdraw(id) {
+  const t = T();
+  const p = t.players.find(x => x.id === id);
+  if (!p) return;
+  p.withdrawn = !p.withdrawn;
+  delete t.pending[id];
+  commit();
+  toast(p.withdrawn ? `${p.name} turnuvadan çekildi; sonraki turlarda eşleştirilmeyecek.` : `${p.name} tekrar eşleştirmeye dahil.`);
+}
+
+function doPair() {
+  const t = T();
+  if (t.rounds.length >= t.settings.rounds) { toast('Tüm turlar oynandı. Tur sayısını Turnuva ayarlarından artırabilirsiniz.', 'warn'); return; }
+  if (!started(t)) {
+    S.sortForSeeding(t.players).forEach((p, i) => { p.no = i + 1; });
+    t.initialColor = t.settings.firstColor === 'random' ? (Math.random() < 0.5 ? 'W' : 'B') : t.settings.firstColor;
+  }
+  try {
+    const res = S.pairNextRound(t);
+    t.rounds.push({ pairings: res.pairings, absent: res.absent, warnings: res.warnings, createdAt: Date.now() });
+    t.pending = {};
+    ui.round = t.rounds.length; ui.edit = false; ui.sel = null; ui.standRound = null;
+    commit();
+    const byeG = res.pairings.find(g => g.black == null);
+    const byeP = byeG && t.players.find(p => p.id === byeG.white);
+    toast(`${t.rounds.length}. tur eşleştirildi${byeP ? ` · Bay: ${byeP.name}` : ''}`);
+    for (const w of res.warnings) toast(w, 'warn');
+  } catch (e) {
+    console.error(e);
+    toast(e.message || String(e), 'err');
+  }
+}
+async function deleteLastRound() {
+  const t = T();
+  const n = t.rounds.length;
+  if (!n) return;
+  if (!await confirmDlg(`${n}. turu sil`, `${n}. turun eşleştirmesi ve girilen tüm sonuçları silinecek. Bu işlem geri alınamaz.`, 'Turu sil')) return;
+  const rd = t.rounds.pop();
+  t.pending = {};
+  for (const a of rd.absent || []) t.pending[a.id] = a.type;
+  ui.round = n; ui.edit = false; ui.sel = null; ui.standRound = null;
+  commit();
+  toast(`${n}. tur silindi`);
+}
+function setResult(b, r, toggle) {
+  const t = T();
+  const g = t.rounds[ui.round - 1]?.pairings[b];
+  if (!g || g.black == null) return;
+  g.result = (r === 'clear' || (toggle && g.result === r)) ? null : r;
+  commit();
+}
+function pick(b, side) {
+  const t = T();
+  const rd = t.rounds[ui.round - 1];
+  if (!rd) return;
+  if (!ui.sel) { ui.sel = { b, side }; render(); return; }
+  if (ui.sel.b === b && ui.sel.side === side) { ui.sel = null; render(); return; }
+  const P = rd.pairings, a = ui.sel;
+  const idA = P[a.b][a.side], idB = P[b][side];
+  P[a.b][a.side] = idB;
+  P[b][side] = idA;
+  for (const k of new Set([a.b, b])) if (P[k].black != null) P[k].result = null;
+  ui.sel = null;
+  commit();
+}
+function flip(b) {
+  const g = T().rounds[ui.round - 1]?.pairings[b];
+  if (!g || g.black == null) return;
+  [g.white, g.black] = [g.black, g.white];
+  if (g.result) g.result = FLIP[g.result];
+  commit();
+}
+function exportJSON() {
+  const t = T();
+  download(`${slug(t.name)}-${new Date().toISOString().slice(0, 10)}.json`, JSON.stringify({ app: 'chesspresso-eslestirme', appVersion: APP_VERSION, version: 1, tournament: t }, null, 1), 'application/json');
+  toast('Yedek dosyası indirildi');
+}
+function importJSON(file) {
+  const fr = new FileReader();
+  fr.onload = () => {
+    try {
+      const d = JSON.parse(fr.result);
+      const t = d.tournament || d;
+      if (!t || !Array.isArray(t.players) || !Array.isArray(t.rounds) || !t.settings) throw new Error('Geçersiz dosya');
+      t.id = uid();
+      t.pending = t.pending || {};
+      if (db.order.some(id => db.tournaments[id].name === t.name)) t.name += ' (yedek)';
+      db.tournaments[t.id] = t;
+      db.order.push(t.id);
+      db.activeId = t.id;
+      ui.round = null; ui.standRound = null; ui.edit = false;
+      commit();
+      toast(`"${t.name}" yüklendi`);
+    } catch (e) { toast('Dosya okunamadı: geçerli bir turnuva yedeği değil.', 'err'); }
+  };
+  fr.readAsText(file);
+}
+async function deleteTournament() {
+  const t = T();
+  if (!await confirmDlg('Turnuvayı sil', `<b>${esc(t.name)}</b> ve tüm verileri bu bilgisayardan silinecek. Önce yedek almanız önerilir.`, 'Kalıcı olarak sil')) return;
+  delete db.tournaments[t.id];
+  db.order = db.order.filter(id => id !== t.id);
+  db.activeId = db.order[0] || null;
+  ui.round = null; ui.standRound = null;
+  commit();
+}
+function exportCSV() {
+  const t = T();
+  const upto = standUpto(t);
+  const rows = S.computeStandings(t, upto);
+  const keys = t.settings.tiebreaks;
+  const q = v => { const s = String(v ?? ''); return /[;"\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
+  const head = ['Sıra', 'No', 'Ad Soyad', 'ELO', 'Kulüp', 'Puan', ...keys.map(k => S.TIEBREAKS[k].short)];
+  const lines = [head.join(';')];
+  for (const r of rows) {
+    lines.push([r.placeLabel, r.p.no || '', r.p.name, r.p.rating || '', r.p.club || '', String(r.pts).replace('.', ','), ...keys.map(k => r.tb[k] == null ? '' : String(r.tb[k]).replace('.', ','))].map(q).join(';'));
+  }
+  download(`${slug(t.name)}-siralama-tur${upto}.csv`, '﻿' + lines.join('\r\n'), 'text/csv;charset=utf-8');
+}
+/* ---------- PDF raporları ---------- */
+const PC = { accent: [0.118, 0.416, 0.314], text: [0.11, 0.11, 0.1], gray: [0.4, 0.39, 0.36], zebra: [0.953, 0.949, 0.933], line: [0.72, 0.71, 0.67], white: [1, 1, 1] };
+const PDF_RES = { '1-0': '1 - 0', '0-1': '0 - 1', '=': '½ - ½', '+-': '+ / -', '-+': '- / +', '--': '- / -' };
+const longDate = d => d ? new Date(d + 'T12:00').toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
+
+function pdfReport(t, docTitle) {
+  const doc = PdfKit.create();
+  const M = 40, BOTTOM = 48;
+  const sub = [t.place, longDate(t.date), t.arbiter ? 'Başhakem: ' + t.arbiter : ''].filter(Boolean).join('   ·   ');
+  const R = {
+    y: 0, land: false,
+    page(landscape) {
+      if (landscape !== undefined) R.land = landscape;
+      doc.addPage(R.land);
+      let y = M + 14;
+      doc.text(M, y, t.name, { size: 16, bold: true, color: PC.text });
+      if (sub) { y += 15; doc.text(M, y, sub, { size: 9, color: PC.gray }); }
+      y += 22;
+      doc.text(M, y, docTitle, { size: 11.5, bold: true, color: PC.accent });
+      y += 7;
+      doc.line(M, y, doc.W - M, y, { width: 1, color: PC.accent });
+      R.y = R.top = y + 16;
+    },
+    ensure(h) { if (R.y + h > doc.H - BOTTOM) R.page(); },
+    section(title, need = 70) {
+      R.ensure(need + 28);
+      if (R.y > R.top) R.y += 8;
+      doc.text(M, R.y + 6, title, { size: 11.5, bold: true, color: PC.text });
+      R.y += 14;
+    },
+    para(text, size = 8.5) {
+      const maxW = doc.W - 2 * M;
+      let line = '';
+      const flush = () => { R.ensure(size + 5); doc.text(M, R.y + size, line, { size, color: PC.gray }); R.y += size + 4; line = ''; };
+      for (const w of String(text).split(/\s+/)) {
+        const tryLine = line ? line + ' ' + w : w;
+        if (line && PdfKit.width(tryLine, size, false) > maxW) { flush(); line = w; } else line = tryLine;
+      }
+      if (line) flush();
+      R.y += 6;
+    },
+    table(cols, rows, o = {}) {
+      const size = o.size || 9.5, rowH = o.rowH || 18, pad = 5;
+      const avail = doc.W - 2 * M;
+      const fixed = cols.reduce((s, c) => s + (c.w || 0), 0);
+      const flex = cols.reduce((s, c) => s + (c.flex || 0), 0) || 1;
+      cols.forEach(c => { c._w = c.w || Math.max(30, (avail - fixed) * (c.flex || 0) / flex); });
+      const cell = (c, x, val, bold, color) => {
+        const s = PdfKit.fit(val == null ? '' : String(val), c._w - 2 * pad, size, bold);
+        const ty = R.y + rowH / 2 + size * 0.35;
+        if (c.align === 'right') doc.text(x + c._w - pad, ty, s, { size, bold, color, align: 'right' });
+        else if (c.align === 'center') doc.text(x + c._w / 2, ty, s, { size, bold, color, align: 'center' });
+        else doc.text(x + pad, ty, s, { size, bold, color });
+      };
+      const head = () => {
+        doc.rect(M, R.y, avail, rowH, PC.accent);
+        let x = M;
+        for (const c of cols) { cell(c, x, c.title, true, PC.white); x += c._w; }
+        R.y += rowH;
+      };
+      R.ensure(rowH * 2);
+      head();
+      rows.forEach((row, i) => {
+        if (R.y + rowH > doc.H - BOTTOM) { R.page(); head(); }
+        if (i % 2 === 1) doc.rect(M, R.y, avail, rowH, PC.zebra);
+        let x = M;
+        if (row.span) {
+          // İlk sütundan sonra tüm satırı kaplayan metin (ör. bay satırı)
+          cell(cols[0], x, row.first, false, PC.text);
+          const rest = avail - cols[0]._w;
+          cell({ _w: rest, align: 'left' }, x + cols[0]._w, row.text, false, PC.text);
+          R.y += rowH;
+          return;
+        }
+        cols.forEach((c, j) => {
+          const v = row[j];
+          const obj = v != null && typeof v === 'object';
+          cell(c, x, obj ? v.text : v, obj ? !!v.bold : !!c.bold, PC.text);
+          x += c._w;
+        });
+        R.y += rowH;
+      });
+      doc.line(M, R.y, M + avail, R.y, { width: 0.6, color: PC.line });
+      R.y += 12;
+    },
+    save(filename) {
+      const n = doc.pages.length;
+      const stamp = new Date().toLocaleString('tr-TR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+      for (let i = 0; i < n; i++) {
+        doc.usePage(i);
+        const y = doc.H - 22;
+        doc.line(M, y - 11, doc.W - M, y - 11, { width: 0.4, color: PC.line });
+        doc.text(M, y, `${t.name}  ·  ${stamp}  ·  Chesspresso Eşleştirme`, { size: 7.5, color: PC.gray });
+        doc.text(doc.W - M, y, `Sayfa ${i + 1} / ${n}`, { size: 7.5, color: PC.gray, align: 'right' });
+      }
+      download(filename, doc.output(`${t.name} – ${docTitle}`), 'application/pdf');
+      toast('PDF indirildi: ' + filename);
+    },
+  };
+  return R;
+}
+
+function pdfRoundSection(R, t, ri, big) {
+  const rd = t.rounds[ri];
+  const Hb = S.buildHistory(t, ri);
+  const pm = pmapOf(t);
+  const bp = fmtPts(t.settings.byePoints);
+  const rows = rd.pairings.map((g, b) => {
+    const w = pm[g.white] || { name: '?' };
+    const sw = fmtPts(Hb.get(g.white)?.score ?? 0);
+    if (g.black == null) return { span: true, first: b + 1, text: `BAY:  ${w.no ? w.no + '  ' : ''}${w.name}  (${sw} puan)  —  rakip yok, +${bp} puan, renk almaz` };
+    const k = pm[g.black] || { name: '?' };
+    return [b + 1, w.no || '', w.name, sw, { text: g.result ? PDF_RES[g.result] : '', bold: true }, fmtPts(Hb.get(g.black)?.score ?? 0), k.no || '', k.name];
+  });
+  const k = big ? 1.2 : 1;
+  R.table([{ title: 'Masa', w: 36 * k, align: 'center' }, { title: 'No', w: 28 * k, align: 'right' }, { title: 'Beyaz', flex: 1 }, { title: 'Puan', w: 36 * k, align: 'center' },
+    { title: 'Sonuç', w: 60 * k, align: 'center' }, { title: 'Puan', w: 36 * k, align: 'center' }, { title: 'No', w: 28 * k, align: 'right' }, { title: 'Siyah', flex: 1 }], rows,
+  big ? { size: 11, rowH: 23 } : {});
+  const notes = [];
+  const byeG = rd.pairings.find(g => g.black == null);
+  if (byeG && pm[byeG.white]) notes.push(`Bay: ${pm[byeG.white].name} (+${bp} puan).`);
+  const absent = (rd.absent || []).filter(a => pm[a.id]).map(a => `${pm[a.id].name} (${a.type === 'half' ? 'izinli, ½' : 'gelmedi, 0'})`);
+  if (absent.length) notes.push('Bu turda oynamayanlar: ' + absent.join(', ') + '.');
+  if (rd.pairings.some(g => g.result === '+-' || g.result === '-+' || g.result === '--')) notes.push('+ / - : beyaz hükmen kazandı,  - / + : siyah hükmen kazandı,  - / - : iki oyuncu da gelmedi.');
+  if (notes.length) R.para(notes.join('   '));
+}
+
+function pdfStandingsSection(R, t, upto) {
+  const rows = S.computeStandings(t, upto);
+  const keys = t.settings.tiebreaks;
+  R.table([{ title: 'Sıra', w: 36, align: 'center' }, { title: 'No', w: 26, align: 'right' }, { title: 'Ad Soyad', flex: 2 }, { title: 'ELO', w: 36, align: 'right' },
+    { title: 'Kulüp', flex: 1.3 }, { title: 'Puan', w: 36, align: 'center', bold: true }, ...keys.map(k => ({ title: S.TIEBREAKS[k].short, w: 38, align: 'right' }))],
+  rows.map(r => [r.placeLabel, r.p.no || '', r.p.name + (r.p.withdrawn ? ' (çekildi)' : ''), r.p.rating || '', r.p.club || '', fmtPts(r.pts), ...keys.map(k => fmtTb(k, r.tb[k]))]));
+  if (keys.length) R.para('Eşitlik bozma sırası: ' + keys.map((k, i) => `${i + 1}) ${S.TIEBREAKS[k].short} = ${S.TIEBREAKS[k].name}`).join('   '));
+}
+
+function pdfCrossSection(R, t) {
+  const n = t.rounds.length;
+  const rows = S.computeStandings(t, n);
+  const placeOf = {};
+  rows.forEach((r, i) => { placeOf[r.p.id] = i + 1; });
+  const k0 = t.settings.tiebreaks[0];
+  const avail = (R.land ? 841.89 : 595.28) - 80;
+  const fixed = 30 + 34 + 34 + (k0 ? 38 : 0);
+  const rw = Math.max(24, Math.min(40, (avail - fixed - 120) / n));
+  const cellOf = e => {
+    if (e.type === 'game' || e.type === 'forfeit' || e.type === 'pending') {
+      const res = e.type === 'pending' ? '?' : e.type === 'forfeit' ? (e.pts ? '+' : '-') : (e.pts === 1 ? '1' : e.pts === 0 ? '0' : '½');
+      return `${placeOf[e.opp]}${e.color === 'W' ? 'B' : 'S'} ${res}`;
+    }
+    if (e.type === 'bye') return 'bay ' + fmtPts(e.pts);
+    if (e.type === 'half') return 'izn ½';
+    return '-';
+  };
+  R.table([{ title: 'Sıra', w: 30, align: 'center' }, { title: 'Ad Soyad', flex: 1 }, { title: 'ELO', w: 34, align: 'right' },
+    ...Array.from({ length: n }, (_, i) => ({ title: String(i + 1), w: rw, align: 'center' })),
+    { title: 'Puan', w: 34, align: 'center', bold: true }, ...(k0 ? [{ title: S.TIEBREAKS[k0].short, w: 38, align: 'right' }] : [])],
+  rows.map((r, i) => [i + 1, r.p.name, r.p.rating || '', ...r.h.perRound.map(cellOf), fmtPts(r.pts), ...(k0 ? [fmtTb(k0, r.tb[k0])] : [])]),
+  { size: rw < 32 ? 8 : 9 });
+  R.para('Hücre: rakibin sıra numarası, renk (B = beyaz, S = siyah) ve sonuç. bay = eşleştirmede bay, izn = izinli.');
+}
+
+function pdfRound(ri) {
+  const t = T();
+  const rd = t.rounds[ri];
+  if (!rd) return;
+  const complete = S.isRoundComplete(rd);
+  const R = pdfReport(t, `${ri + 1}. Tur ${complete ? 'Sonuçları' : 'Eşleştirmesi'}`);
+  R.page(false);
+  pdfRoundSection(R, t, ri, true);
+  R.save(`${slug(t.name)}-tur${ri + 1}-${complete ? 'sonuclar' : 'eslestirme'}.pdf`);
+}
+function standTitle(t, upto) {
+  const final = upto === t.settings.rounds && upto > 0 && S.isRoundComplete(t.rounds[upto - 1]);
+  return final ? 'Son Sıralama' : upto ? `Sıralama (${upto}. tur sonrası)` : 'Başlangıç Listesi';
+}
+function pdfStandings() {
+  const t = T();
+  const upto = standUpto(t);
+  const R = pdfReport(t, standTitle(t, upto));
+  R.page(t.settings.tiebreaks.length > 5);
+  pdfStandingsSection(R, t, upto);
+  R.save(`${slug(t.name)}-siralama-tur${upto}.pdf`);
+}
+function pdfCross() {
+  const t = T();
+  if (!t.rounds.length) return;
+  const R = pdfReport(t, 'Çapraz Tablo');
+  R.page(t.rounds.length > 6);
+  pdfCrossSection(R, t);
+  R.save(`${slug(t.name)}-capraz-tablo.pdf`);
+}
+function pdfFull() {
+  const t = T();
+  const n = t.rounds.length;
+  const R = pdfReport(t, 'Turnuva Raporu');
+  R.page(false);
+  R.section(standTitle(t, n));
+  pdfStandingsSection(R, t, n);
+  if (n) {
+    if (n > 6) R.page(true);
+    R.section('Çapraz Tablo');
+    pdfCrossSection(R, t);
+    if (R.land) R.page(false);
+    for (let i = 0; i < n; i++) {
+      R.section(`${i + 1}. Tur`, 90);
+      pdfRoundSection(R, t, i);
+    }
+  }
+  R.save(`${slug(t.name)}-turnuva-raporu.pdf`);
+}
+
+function moveTb(i, d) {
+  const tb = T().settings.tiebreaks;
+  const j = i + d;
+  if (j < 0 || j >= tb.length) return;
+  [tb[i], tb[j]] = [tb[j], tb[i]];
+  commit();
+}
+
+/* ---------- Görünümler ---------- */
+const TABS = [['players', 'Oyuncular'], ['rounds', 'Turlar'], ['standings', 'Sıralama'], ['cross', 'Çapraz tablo'], ['settings', 'Turnuva ayarları']];
+
+function renderHeader() {
+  const sel = $('#tsel');
+  const ids = db.order.filter(id => db.tournaments[id]);
+  sel.innerHTML = ids.map(id => `<option value="${id}" ${id === db.activeId ? 'selected' : ''}>${esc(db.tournaments[id].name)}</option>`).join('') +
+    `<option value="__new">＋ Yeni turnuva…</option>`;
+  sel.hidden = !ids.length;
+}
+function renderHero(t) {
+  const hero = $('#hero');
+  if (!t) { hero.innerHTML = ''; return; }
+  const R = t.rounds.length;
+  const active = t.players.filter(p => !p.withdrawn).length;
+  const counts = { players: t.players.length, rounds: `${R}/${t.settings.rounds}` };
+  const meta = [`${active} oyuncu`, `${R}/${t.settings.rounds} tur`, t.place, t.date ? new Date(t.date + 'T12:00').toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' }) : '', t.arbiter ? `Başhakem: ${t.arbiter}` : ''].filter(Boolean);
+  hero.innerHTML = `<div class="hero"><h1>${esc(t.name)}</h1><div class="meta">${meta.map(m => `<span>${esc(m)}</span>`).join('')}</div>
+    <nav class="tabs">${TABS.map(([k, l]) => `<button class="tab ${ui.tab === k ? 'on' : ''}" data-act="tab" data-tab="${k}">${l}${counts[k] != null ? `<span class="n">${counts[k]}</span>` : ''}</button>`).join('')}</nav></div>`;
+}
+function render() {
+  renderHeader();
+  renderSaveState();
+  const t = T();
+  renderHero(t);
+  const app = $('#app');
+  if (!t) { app.innerHTML = viewWelcome(); return; }
+  const views = { settings: viewSettings, players: viewPlayers, rounds: viewRounds, standings: viewStandings, cross: viewCross };
+  const v = views[ui.tab] || viewPlayers;
+  const sub = [t.place, t.date, t.arbiter ? 'Başhakem: ' + t.arbiter : ''].filter(Boolean).join(' · ');
+  app.innerHTML = `<div class="print-title"><h1>${esc(t.name)}</h1><div>${esc(sub)}</div></div>` + v(t);
+  if (ui.focusAdd) { ui.focusAdd = false; const i = $('form[data-form="add-player"] input[name=name]'); if (i) i.focus(); }
+}
+
+function viewWelcome() {
+  return `<section class="welcome"><div class="welcome-card">
+    <div class="big">♞</div>
+    <h1>Chesspresso Eşleştirme</h1>
+    <p>İsviçre sistemi satranç turnuvaları için eşleştirme ve sıralama. Oyuncuları ekleyin, her turu tek tıkla eşleştirin, sonuçları girin; sıralama ve averajlar anında hesaplanır.</p>
+    <div class="card"><form data-form="create">
+      <label class="field"><span>Turnuva adı</span><input name="name" required placeholder="ör. Kulüp Hızlı Satranç Turnuvası" autofocus></label>
+      <label class="field"><span>Tur sayısı</span><input name="rounds" type="number" min="1" max="30" value="5"></label>
+      <button class="btn primary lg">Turnuvayı oluştur</button>
+    </form></div>
+    <p style="margin-top:14px"><button class="btn ghost" data-act="import">Yedekten yükle (.json)</button></p>
+  </div></section>`;
+}
+
+/* Tur tur renk geçmişi: beyaz/siyah kare, oynanmayan turlar kesik çizgili */
+function colorSeq(h) {
+  const cells = h.perRound.map(e => {
+    const sat = e.type === 'game' || e.type === 'pending' || (e.type === 'forfeit' && e.pts === 1);
+    if (sat) return `<i class="cs ${e.color === 'W' ? 'w' : 'k'}" title="${e.round}. tur: ${e.color === 'W' ? 'beyaz' : 'siyah'}"></i>`;
+    const why = { bye: 'bay (renk yok)', half: 'izinli', zero: 'gelmedi', out: 'turnuvada değil', forfeit: 'hükmen yenik' }[e.type] || '';
+    return `<i class="cs x" title="${e.round}. tur: ${why}"></i>`;
+  }).join('');
+  const w = h.colors.filter(c => c === 'W').length, b = h.colors.length - w;
+  return `<span class="cseq">${cells}</span><span class="sub">${w} beyaz · ${b} siyah</span>`;
+}
+
+function viewPlayers(t) {
+  const st = started(t);
+  const H = S.buildHistory(t, t.rounds.length);
+  const list = st ? [...t.players].sort((a, b) => (a.no || 0) - (b.no || 0)) : S.sortForSeeding(t.players);
+  const rows = list.map((p, i) => {
+    const h = H.get(p.id);
+    return `<tr class="${p.withdrawn ? 'row-out' : ''}">
+      <td class="no">${st ? p.no : i + 1}</td>
+      <td><span class="pname">${esc(p.name)}</span>${p.withdrawn ? '<span class="tag bad">Çekildi</span>' : ''}${t.pending[p.id] === 'half' ? '<span class="tag">Sonraki tur izinli</span>' : t.pending[p.id] === 'zero' ? '<span class="tag">Sonraki tur gelmeyecek</span>' : ''}</td>
+      <td class="num">${p.rating || '<span class="muted">–</span>'}</td>
+      <td class="muted">${esc(p.club) || ''}</td>
+      ${st ? `<td class="pts">${fmtPts(h.score)}</td><td class="nowrap">${colorSeq(h)}</td>` : ''}
+      <td class="num nowrap">
+        <button class="btn ghost sm" data-act="edit-player" data-id="${p.id}">Düzenle</button>
+        ${st ? `<button class="btn ghost sm" data-act="withdraw" data-id="${p.id}">${p.withdrawn ? 'Geri al' : 'Çekil'}</button>` : ''}
+        ${playerUsed(t, p.id) ? '' : `<button class="btn ghost sm danger" data-act="del-player" data-id="${p.id}">Sil</button>`}
+      </td></tr>`;
+  }).join('');
+  return `<section class="card">
+    <div class="card-head">
+      <div><h2>Oyuncular<span class="count">${t.players.length}</span></h2>
+      <p class="muted">${st ? 'Başlangıç numaraları 1. tur eşleştirilirken ELO sırasına göre verildi.' : 'Başlangıç sırası ELO’ya göre otomatik belirlenir (eşitlikte alfabetik).'}</p></div>
+      <div class="actions">
+        <button class="btn" data-act="bulk">Toplu ekle</button>
+        ${t.players.length ? '' : '<button class="btn ghost" data-act="sample">Örnek oyuncular</button>'}
+      </div>
+    </div>
+    <form class="add-row" data-form="add-player" autocomplete="off">
+      <input name="name" placeholder="Ad Soyad" required aria-label="Ad Soyad">
+      <input name="rating" type="number" min="0" max="3500" placeholder="ELO / UKD" aria-label="ELO">
+      <input name="club" placeholder="Kulüp / Şehir" aria-label="Kulüp">
+      <button class="btn primary">Ekle</button>
+    </form>
+    ${t.players.length ? `<div class="tbl-wrap"><table>
+      <thead><tr><th>No</th><th>Ad Soyad</th><th class="num">ELO</th><th>Kulüp</th>${st ? '<th class="c">Puan</th><th>Renkler</th>' : ''}<th></th></tr></thead>
+      <tbody>${rows}</tbody></table></div>`
+    : `<div class="empty"><div class="ic">♟</div><p>Henüz oyuncu yok. Yukarıdan tek tek ekleyin ya da listeyi toplu yapıştırın.</p></div>`}
+    ${t.players.length >= 2 && !st ? `<div class="pair-bar"><span class="muted">Oyuncu listesi hazırsa ilk turu eşleştirin.</span><button class="btn primary" data-act="tab" data-tab="rounds">1. tura geç →</button></div>` : ''}
+  </section>`;
+}
+
+function viewRounds(t) {
+  const R = t.rounds.length, total = t.settings.rounds;
+  const lastDone = R === 0 || S.isRoundComplete(t.rounds[R - 1]);
+  const canNext = R < total;
+  const maxView = R + (canNext ? 1 : 0);
+  if (ui.round == null || ui.round < 1 || ui.round > maxView) ui.round = R === 0 ? 1 : (!lastDone || !canNext ? R : R + 1);
+  let chips = '';
+  for (let r = 1; r <= R; r++) {
+    const done = S.isRoundComplete(t.rounds[r - 1]);
+    chips += `<button class="chip ${ui.round === r ? 'on' : ''}" data-act="round" data-r="${r}">${r}. Tur ${done ? '<span class="ok">✓</span>' : '<span class="dot" title="Eksik sonuç var"></span>'}</button>`;
+  }
+  if (canNext) chips += `<button class="chip next ${ui.round === R + 1 ? 'on' : ''}" data-act="round" data-r="${R + 1}">＋ ${R + 1}. Tur</button>`;
+  const body = ui.round === R + 1 ? viewSetup(t, R + 1, lastDone) : viewRound(t, ui.round - 1);
+  return `<div class="chips">${chips}</div>${body}`;
+}
+
+/* Bir sonraki turda kimin bay geçeceğini, kaydetmeden deneme eşleştirmesiyle bulur. */
+function previewBye(t) {
+  try {
+    const tc = { ...t, players: t.players.map(p => ({ ...p })) };
+    if (!started(tc)) S.sortForSeeding(tc.players).forEach((p, i) => { p.no = i + 1; });
+    const g = S.pairNextRound(tc).pairings.find(x => x.black == null);
+    return g ? (tc.players.find(p => p.id === g.white) || {}).name || '' : '';
+  } catch (e) { return ''; }
+}
+
+function viewSetup(t, rn, lastDone) {
+  if (t.players.filter(p => !p.withdrawn).length < 2) {
+    return `<section class="card"><div class="empty"><div class="ic">♟</div><p>Eşleştirme için en az 2 oyuncu gerekli.</p><button class="btn primary" data-act="tab" data-tab="players">Oyuncu ekle</button></div></section>`;
+  }
+  const H = S.buildHistory(t, t.rounds.length);
+  const st = started(t);
+  const act = (st ? t.players.filter(p => !p.withdrawn).sort((a, b) => H.get(b.id).score - H.get(a.id).score || a.no - b.no)
+    : S.sortForSeeding(t.players.filter(p => !p.withdrawn)));
+  const wd = t.players.filter(p => p.withdrawn);
+  const playing = act.filter(p => !t.pending[p.id]).length;
+  const items = act.map(p => {
+    const v = t.pending[p.id] || 'play';
+    const b = (val, l) => `<button class="${v === val ? 'on' : ''}" data-act="att" data-id="${p.id}" data-v="${val}">${l}</button>`;
+    return `<div class="att ${v}">${st ? `<span class="sc">${fmtPts(H.get(p.id).score)}</span>` : ''}<span class="nm" title="${esc(p.name)}">${esc(p.name)}</span>
+      <div class="seg sm">${b('play', 'Oynar')}${b('half', 'İzinli ½')}${b('zero', 'Gelmeyecek')}</div></div>`;
+  }).join('');
+  const byeName = playing % 2 && lastDone ? previewBye(t) : '';
+  const byeInfo = !(playing % 2) ? '' : byeName
+    ? `<div class="bye-preview"><span class="tag bye">BAY</span> Oyuncu sayısı tek. Bay geçecek oyuncu kurala göre otomatik seçildi: <b>${esc(byeName)}</b> (+${fmtPts(t.settings.byePoints)} puan). Eşleştirmede son masaya eklenecek.</div>`
+    : `<div class="bye-preview"><span class="tag bye">BAY</span> Oyuncu sayısı tek; bay geçecek oyuncuyu program eşleştirme sırasında otomatik seçecek.</div>`;
+  return `<section class="card">
+    <div class="card-head"><div><h2>${rn}. tur eşleştirmesi</h2>
+      <p class="muted">Herkes oynayacaksa hiçbir şey seçmeden doğrudan eşleştirin. Sadece bu tura gelmeyecek oyuncu varsa işaretleyin: <b>İzinli</b> ½ puan, <b>Gelmeyecek</b> 0 puan alır. Bayı siz seçmezsiniz, program belirler.${rn === 1 ? ' İlk turda sıralamanın üst yarısı alt yarısıyla eşleşir.' : ''}</p></div></div>
+    ${!lastDone ? `<div class="notice warn"><b>${rn - 1}. turda sonucu girilmemiş masalar var.</b> Önce tüm sonuçları girin.</div>` : ''}
+    <div class="att-grid">${items}</div>
+    ${wd.length ? `<p class="muted" style="margin:14px 0 0">Çekilen oyuncular (eşleştirilmez): ${wd.map(p => esc(p.name)).join(', ')}</p>` : ''}
+    ${byeInfo}
+    <div class="pair-bar">
+      <div><b>${playing}</b> oyuncu eşleşecek${playing % 2 ? ` · ${(playing - 1) / 2} masa + 1 bay` : ` · ${playing / 2} masa`}</div>
+      <button class="btn primary lg" data-act="pair" ${(!lastDone || playing < 1) ? 'disabled' : ''}>${rn}. turu eşleştir</button>
+    </div>
+  </section>`;
+}
+
+function pcell(p, side, b, editable, right) {
+  const piece = side ? `<span class="pc ${side === 'white' ? 'w' : 'k'}"></span>` : '';
+  const inner = `${piece}<span class="pname">${esc(p.name)}</span><span class="sub">${p.no ? '#' + p.no : ''}${p.rating ? ' · ' + p.rating : ''}</span>`;
+  if (!editable) return `<span class="plc">${inner}</span>`;
+  const on = ui.sel && ui.sel.b === b && ui.sel.side === side;
+  return `<button class="pick ${on ? 'on' : ''}" data-act="pick" data-b="${b}" data-side="${side}">${inner}</button>`;
+}
+function resultControl(g, b) {
+  const r = g.result;
+  const btn = (v, l, title) => `<button class="${r === v ? 'on' : ''}" data-act="res" data-b="${b}" data-r="${v}" title="${title}">${l}</button>`;
+  const forfeit = r === '+-' || r === '-+' || r === '--';
+  return `<div class="seg">${btn('1-0', '1–0', 'Beyaz kazandı')}${btn('=', '½–½', 'Berabere')}${btn('0-1', '0–1', 'Siyah kazandı')}<select class="${forfeit ? 'on' : ''}" data-change="res-more" data-b="${b}" title="Hükmen sonuçlar">
+      <option value="" ${forfeit ? '' : 'selected'}>⋯</option>
+      <option value="+-" ${r === '+-' ? 'selected' : ''}>+/−</option>
+      <option value="-+" ${r === '-+' ? 'selected' : ''}>−/+</option>
+      <option value="--" ${r === '--' ? 'selected' : ''}>−/−</option>
+      ${r ? '<option value="clear">Sil</option>' : ''}
+    </select></div><span class="print-only">${r ? RES_LABEL[r] : '…… – ……'}</span>`;
+}
+
+function viewRound(t, ri) {
+  const rd = t.rounds[ri];
+  if (!rd) return '';
+  const R = t.rounds.length, isLast = ri === R - 1;
+  const Hb = S.buildHistory(t, ri);
+  const pm = pmapOf(t);
+  const games = rd.pairings.filter(g => g.black != null);
+  const done = games.filter(g => S.RESULTS[g.result]).length;
+  const editable = ui.edit && isLast;
+  const complete = done === games.length;
+  const rows = rd.pairings.map((g, b) => {
+    const w = pm[g.white] || { name: '?' };
+    const sw = Hb.get(g.white)?.score ?? 0;
+    if (g.black == null) {
+      // Bay geçen oyuncu renk almaz; beyaz/siyah sütununa konmaz, satırı kaplar.
+      return `<tr class="bye-row"><td class="board">${b + 1}</td><td class="bye-cell" colspan="5"><span class="tag bye">BAY</span> ${pcell(w, null, b, editable)}
+        <span class="sep">·</span>${fmtPts(sw)} puan<span class="sep">·</span>rakip yok, <b>+${fmtPts(t.settings.byePoints)} puan</b>, renk almaz</td></tr>`;
+    }
+    const k = pm[g.black] || { name: '?' };
+    const sk = Hb.get(g.black)?.score ?? 0;
+    const rem = Hb.get(g.white)?.opponents.has(g.black);
+    return `<tr class="${rem && editable ? 'rematch' : ''}">
+      <td class="board">${b + 1}${editable ? ` <button class="icon-btn" data-act="flip" data-b="${b}" title="Renkleri değiştir">⇄</button>` : ''}</td>
+      <td class="pl">${pcell(w, 'white', b, editable)}</td>
+      <td class="pts">${fmtPts(sw)}</td>
+      <td class="res">${resultControl(g, b)}</td>
+      <td class="pts">${fmtPts(sk)}</td>
+      <td class="pl">${pcell(k, 'black', b, editable)}${rem ? '<span class="tag warn">Tekrar eşleşme</span>' : ''}</td>
+    </tr>`;
+  }).join('');
+  const byeG = rd.pairings.find(g => g.black == null);
+  const bp = fmtPts(t.settings.byePoints);
+  const absent = (rd.absent || []).filter(a => pm[a.id]).map(a => `<span class="abs-item"><b>${esc(pm[a.id].name)}</b>
+    <select class="no-print" data-change="absent-type" data-r="${ri}" data-id="${a.id}" aria-label="Durum">
+      <option value="zero" ${a.type === 'half' ? '' : 'selected'}>gelmedi (0)</option>
+      <option value="half" ${a.type === 'half' ? 'selected' : ''}>izinli (½)</option>
+      ${byeG ? '' : `<option value="bye">aslında bay geçti (+${bp})</option>`}
+    </select><span class="print-only">(${a.type === 'half' ? 'izinli, ½' : 'gelmedi, 0'})</span></span>`);
+  const finished = isLast && complete && R >= t.settings.rounds;
+  const pct = games.length ? Math.round(done / games.length * 100) : 100;
+  return `${finished ? `<div class="notice"><b>Turnuva tamamlandı.</b> Son sıralamayı görmek için <a href="#" data-act="tab" data-tab="standings">Sıralama</a> sekmesine geçin. Ek tur gerekirse tur sayısını ayarlardan artırabilirsiniz.</div>` : ''}
+  <section class="card">
+    <div class="card-head">
+      <div><h2>${ri + 1}. Tur</h2>
+        <div class="progress" style="margin-top:6px"><div class="bar"><i style="width:${pct}%"></i></div>${done}/${games.length} sonuç girildi</div></div>
+      <div class="actions">
+        ${isLast ? `<button class="btn ${ui.edit ? 'primary' : ''}" data-act="edit-toggle">${ui.edit ? 'Düzenlemeyi bitir' : 'Eşleştirmeyi düzenle'}</button>` : ''}
+        ${isLast ? '<button class="btn danger" data-act="del-round">Turu sil</button>' : ''}
+        <button class="btn" data-act="print">Yazdır</button>
+        <button class="btn primary" data-act="pdf-round" data-r="${ri}">PDF indir</button>
+      </div>
+    </div>
+    ${byeG && pm[byeG.white] ? `<div class="notice no-print"><span class="tag bye">BAY</span> <b>${esc(pm[byeG.white].name)}</b> bu tur bay geçiyor (+${fmtPts(t.settings.byePoints)} puan). Oyuncu sayısı tek olduğu için program kurala göre seçti: en düşük puan grubunda, daha önce bay geçmemiş en alt sıradaki oyuncu.</div>` : ''}
+    ${(rd.warnings || []).map(w => `<div class="notice warn">${esc(w)}</div>`).join('')}
+    ${editable ? '<div class="notice">Yer değiştirmek için iki oyuncuya sırayla tıklayın. ⇄ masadaki renkleri değiştirir. Değişen masaların sonuçları silinir.</div>' : ''}
+    <div class="tbl-wrap"><table class="pairings">
+      <thead><tr><th>Masa</th><th>Beyaz</th><th class="c">Puan</th><th class="c">Sonuç</th><th class="c">Puan</th><th>Siyah</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table></div>
+    ${absent.length ? `<div class="abs-list"><span class="muted">Bu turda oynamayanlar:</span> ${absent.join('')}</div>` : ''}
+    <div class="legend no-print"><span><b>+/−</b> Beyaz hükmen kazandı</span><span><b>−/+</b> Siyah hükmen kazandı</span><span><b>−/−</b> İki oyuncu da gelmedi</span><span>Seçili sonuca tekrar tıklamak sonucu siler.</span></div>
+    ${isLast && complete && R < t.settings.rounds ? `<div class="pair-bar no-print"><span class="muted">Tüm sonuçlar girildi.</span><button class="btn primary" data-act="round" data-r="${R + 1}">${R + 1}. tura geç →</button></div>` : ''}
+  </section>`;
+}
+
+function standUpto(t) {
+  const R = t.rounds.length;
+  let u = ui.standRound;
+  if (u == null || u > R || u < 0) u = R;
+  return u;
+}
+function viewStandings(t) {
+  if (!t.players.length) return `<section class="card"><div class="empty"><div class="ic">♟</div><p>Sıralama için önce oyuncu ekleyin.</p></div></section>`;
+  const R = t.rounds.length;
+  const upto = standUpto(t);
+  const rows = S.computeStandings(t, upto);
+  const keys = t.settings.tiebreaks;
+  const final = upto === t.settings.rounds && upto > 0 && S.isRoundComplete(t.rounds[upto - 1]);
+  const partial = upto > 0 && !S.isRoundComplete(t.rounds[upto - 1]);
+  const opts = [];
+  for (let r = R; r >= 1; r--) opts.push(`<option value="${r}" ${r === upto ? 'selected' : ''}>${r}. tur sonrası</option>`);
+  const body = rows.map(r => {
+    const medal = final && !r.shared && r.place <= 3 ? `<span class="medal m${r.place}">${r.place}</span>` : r.placeLabel;
+    return `<tr class="${r.p.withdrawn ? 'row-out' : ''}">
+      <td class="place">${medal}</td><td class="no">${r.p.no || ''}</td>
+      <td><span class="pname">${esc(r.p.name)}</span>${r.p.withdrawn ? '<span class="tag bad">Çekildi</span>' : ''}</td>
+      <td class="num">${r.p.rating || ''}</td><td class="muted">${esc(r.p.club)}</td>
+      <td class="score">${fmtPts(r.pts)}</td>
+      ${keys.map(k => `<td class="num">${fmtTb(k, r.tb[k])}</td>`).join('')}
+    </tr>`;
+  }).join('');
+  return `<section class="card">
+    <div class="card-head">
+      <div><h2>${final ? 'Son sıralama' : 'Sıralama'}</h2>
+        <p class="muted">${R ? (partial ? `${upto}. turda eksik sonuçlar var; girilenler dahil.` : `${upto}. tur sonrası`) : 'Henüz tur oynanmadı.'}</p></div>
+      <div class="actions">
+        ${R > 1 ? `<select data-change="stand-round" aria-label="Tur">${opts.join('')}</select>` : ''}
+        <button class="btn" data-act="csv">Excel (CSV)</button>
+        <button class="btn" data-act="print">Yazdır</button>
+        <button class="btn primary" data-act="pdf-stand">PDF indir</button>
+        ${R ? '<button class="btn" data-act="pdf-full" title="Sıralama, çapraz tablo ve tüm turların eşleştirme/sonuçları">Tüm rapor (PDF)</button>' : ''}
+      </div>
+    </div>
+    <div class="print-only"><b>${final ? 'Son sıralama' : `Sıralama — ${upto}. tur sonrası`}</b></div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Sıra</th><th>No</th><th>Ad Soyad</th><th class="num">ELO</th><th>Kulüp</th><th class="c">Puan</th>
+        ${keys.map(k => `<th class="num" title="${esc(S.TIEBREAKS[k].name)}">${S.TIEBREAKS[k].short}</th>`).join('')}</tr></thead>
+      <tbody>${body}</tbody>
+    </table></div>
+    <div class="legend">${keys.map((k, i) => `<span><b>${i + 1}. ${S.TIEBREAKS[k].short}</b> ${esc(S.TIEBREAKS[k].name)}</span>`).join('')}</div>
+  </section>`;
+}
+
+function viewCross(t) {
+  const R = t.rounds.length;
+  if (!R) return `<section class="card"><div class="empty"><div class="ic">♟</div><p>Çapraz tablo ilk tur eşleştirildikten sonra oluşur.</p><button class="btn primary" data-act="tab" data-tab="rounds">Turlara git</button></div></section>`;
+  const rows = S.computeStandings(t, R);
+  const placeOf = {};
+  rows.forEach((r, i) => { placeOf[r.p.id] = i + 1; });
+  const k0 = t.settings.tiebreaks[0];
+  const body = rows.map((r, i) => {
+    const cells = r.h.perRound.map(e => {
+      if (e.type === 'game' || e.type === 'forfeit' || e.type === 'pending') {
+        const res = e.type === 'pending' ? '?' : e.type === 'forfeit' ? (e.pts ? '+' : '−') : (e.pts === 1 ? '1' : e.pts === 0 ? '0' : '½');
+        const cls = e.type === 'pending' ? '' : e.pts === 1 ? 'win' : e.pts === 0 ? 'loss' : '';
+        return `<td class="rc ${cls}"><span class="op">${placeOf[e.opp]}</span><span class="cl">${e.color === 'W' ? 'B' : 'S'}</span><span class="rs">${res}</span></td>`;
+      }
+      if (e.type === 'bye') return `<td class="rc win"><span class="op">bay</span> <span class="rs">${fmtPts(e.pts)}</span></td>`;
+      if (e.type === 'half') return `<td class="rc"><span class="op">izinli</span> <span class="rs">½</span></td>`;
+      return `<td class="rc loss"><span class="rs">–</span></td>`;
+    }).join('');
+    return `<tr><td class="place">${i + 1}</td><td><span class="pname">${esc(r.p.name)}</span></td><td class="num">${r.p.rating || ''}</td>${cells}<td class="score">${fmtPts(r.pts)}</td>${k0 ? `<td class="num">${fmtTb(k0, r.tb[k0])}</td>` : ''}</tr>`;
+  }).join('');
+  const rh = Array.from({ length: R }, (_, i) => `<th class="c">${i + 1}</th>`).join('');
+  return `<section class="card">
+    <div class="card-head"><div><h2>Çapraz tablo</h2><p class="muted">Her hücre: rakibin sıra numarası, renk (B = beyaz, S = siyah) ve sonuç.</p></div>
+      <div class="actions"><button class="btn" data-act="print">Yazdır</button><button class="btn primary" data-act="pdf-cross">PDF indir</button></div></div>
+    <div class="tbl-wrap"><table class="cross">
+      <thead><tr><th>Sıra</th><th>Ad Soyad</th><th class="num">ELO</th>${rh}<th class="c">Puan</th>${k0 ? `<th class="num">${S.TIEBREAKS[k0].short}</th>` : ''}</tr></thead>
+      <tbody>${body}</tbody>
+    </table></div>
+  </section>`;
+}
+
+function viewSettings(t) {
+  const st = started(t);
+  const s = t.settings;
+  const tbItems = s.tiebreaks.map((k, i) => `<li><span class="ix">${i + 1}</span><span class="tx">${esc(S.TIEBREAKS[k].name)} <span class="muted">(${S.TIEBREAKS[k].short})</span><small>${esc(S.TIEBREAKS[k].desc)}</small></span>
+      <button class="icon-btn" data-act="tb-move" data-i="${i}" data-d="-1" title="Yukarı" ${i === 0 ? 'disabled' : ''}>↑</button>
+      <button class="icon-btn" data-act="tb-move" data-i="${i}" data-d="1" title="Aşağı" ${i === s.tiebreaks.length - 1 ? 'disabled' : ''}>↓</button>
+      <button class="icon-btn" data-act="tb-del" data-i="${i}" title="Kaldır">✕</button></li>`).join('');
+  const avail = Object.keys(S.TIEBREAKS).filter(k => !s.tiebreaks.includes(k));
+  return `<div class="grid2">
+    <section class="card">
+      <div class="card-head"><h2>Turnuva bilgileri</h2></div>
+      <label class="field"><span>Turnuva adı</span><input data-field="name" value="${esc(t.name)}"></label>
+      <label class="field"><span>Yer</span><input data-field="place" value="${esc(t.place)}" placeholder="ör. Ankara"></label>
+      <label class="field"><span>Tarih</span><input type="date" data-field="date" value="${esc(t.date)}"></label>
+      <label class="field"><span>Başhakem</span><input data-field="arbiter" value="${esc(t.arbiter)}"></label>
+    </section>
+    <section class="card">
+      <div class="card-head"><h2>Kurallar</h2></div>
+      <label class="field"><span>Tur sayısı</span><input type="number" min="${Math.max(1, t.rounds.length)}" max="30" data-field="settings.rounds" value="${s.rounds}">
+        <small>Oyuncu sayısı N ise en az log₂(N) tur önerilir (ör. 16 oyuncu → 4–5 tur).</small></label>
+      <label class="field"><span>Bay geçen oyuncunun puanı</span><select data-field="settings.byePoints">
+        ${[[1, '1 puan'], [0.5, '½ puan'], [0, '0 puan']].map(([v, l]) => `<option value="${v}" ${Number(s.byePoints) === v ? 'selected' : ''}>${l}</option>`).join('')}</select></label>
+      <label class="field"><span>Renk önceliği</span><select data-field="settings.colorPriority">
+        <option value="balanced" ${s.colorPriority !== 'fide' ? 'selected' : ''}>Dengeli (önerilen)</option>
+        <option value="fide" ${s.colorPriority === 'fide' ? 'selected' : ''}>FIDE — puan grubu her zaman önce</option></select>
+        <small>${s.colorPriority === 'fide'
+          ? 'Puan grupları korunur; renk farkı ±2’ye (ör. 4 oyunda 3 beyaz) daha sık çıkabilir.'
+          : 'Bir oyuncunun beyaz–siyah farkı 2’ye çıkacaksa (ör. 4 oyunda 3 beyaz), program onu yakın puanlı başka bir rakiple eşleştirir.'}</small></label>
+      <label class="field"><span>1 numaralı oyuncunun 1. turdaki rengi</span><select data-field="settings.firstColor" ${st ? 'disabled' : ''}>
+        ${[['W', 'Beyaz'], ['B', 'Siyah'], ['random', 'Kura (rastgele)']].map(([v, l]) => `<option value="${v}" ${s.firstColor === v ? 'selected' : ''}>${l}</option>`).join('')}</select>
+        ${st ? `<small>Turnuva başladı (${t.initialColor === 'B' ? 'siyah' : 'beyaz'} ile).</small>` : ''}</label>
+    </section>
+    <section class="card">
+      <div class="card-head"><div><h2>Eşitlik bozma (averaj) sırası</h2><p class="muted">Puanı eşit oyuncular bu sıraya göre ayrılır.</p></div></div>
+      <ul class="tb-list">${tbItems || '<li class="muted">Kriter yok — eşitlikte başlangıç numarası kullanılır.</li>'}</ul>
+      ${avail.length ? `<select data-change="tb-add" aria-label="Kriter ekle"><option value="">＋ Kriter ekle…</option>${avail.map(k => `<option value="${k}">${esc(S.TIEBREAKS[k].name)}</option>`).join('')}</select>` : ''}
+    </section>
+    <section class="card">
+      <div class="card-head"><div><h2>Yedekleme</h2><p class="muted">Veriler bu bilgisayarda, tarayıcının içinde saklanır. Tarayıcı verilerini temizlerseniz silinir; düzenli yedek alın.</p></div></div>
+      <div class="actions">
+        <button class="btn primary" data-act="export">Yedek indir (.json)</button>
+        <button class="btn" data-act="import">Yedekten yükle</button>
+        ${t.rounds.length ? '<button class="btn" data-act="pdf-full">Turnuva raporu (PDF)</button>' : ''}
+        <button class="btn" data-act="new-t">Yeni turnuva</button>
+        <button class="btn danger" data-act="del-t">Turnuvayı sil</button>
+      </div>
+    </section>
+    <section class="card span2">
+      <div class="card-head"><h2>Eşleştirme nasıl yapılır?</h2><span class="muted">Chesspresso Eşleştirme v${APP_VERSION}</span></div>
+      <div class="help muted">
+        <p><b>Puan grupları.</b> Her turda oyuncular puanlarına göre gruplanır. Aynı puandaki grup, Hollanda (Dutch) sistemindeki gibi ikiye bölünür: üst yarı alt yarıyla eşleşir (8 kişilik grupta 1–5, 2–6, 3–7, 4–8).</p>
+        <p><b>Tekrar yok.</b> İki oyuncu turnuvada ikinci kez karşılaşmaz. Hükmen sonuçlanan maçlar oynanmamış sayılır.</p>
+        <p><b>Renk dengesi.</b> Kimse aynı renkle üst üste üç kez oynamaz ve beyaz–siyah farkı 2’yi geçmez. “Dengeli” modda farkın 2’ye çıkması da (ör. 4 oyunda 3 beyaz) önlenir; mümkün olduğunca herkes renk değiştirir. Bay ve izinli turlar renk sayılmaz; hükmen kazanılan maçta masadaki renk sayılır. Oyuncuların tur tur renkleri Oyuncular sekmesinde görünür.</p>
+        <p><b>Kaydırma.</b> Grup tek sayıysa en alttaki oyuncu bir alt gruba kayar; aynı oyuncunun üst üste kaydırılmasından kaçınılır.</p>
+        <p><b>Bay.</b> Oyuncu sayısı tekse, en düşük puan grubunda daha önce bay geçmemiş (hükmen de kazanmamış) en alt sıradaki oyuncu bay geçer.</p>
+        <p><b>Tek seferde en iyi çözüm.</b> Bu kurallar öncelik sırasıyla ağırlıklandırılır ve Edmonds eşleştirme algoritması tüm olasılıklar arasından en iyisini bulur; çıkmaza girmez.</p>
+        <p><b>Not.</b> Program FIDE kurallarını yakından izler ancak FIDE onaylı bir eşleştirme motoru değildir. Resmî ELO/UKD işlenecek turnuvalarda federasyonun istediği yazılımı kullanın.</p>
+        <p><b>Averaj.</b> Oynanmayan turlar (bay, hükmen, izin) Buchholz ve Sonneborn-Berger hesabında oyuncunun kendi puanına sahip sanal bir rakiple oynanmış sayılır.</p>
+      </div>
+    </section>
+  </div>`;
+}
+
+/* ---------- Olaylar ---------- */
+document.addEventListener('click', async ev => {
+  const el = ev.target.closest('[data-act]');
+  if (!el || el.disabled) return;
+  const act = el.dataset.act;
+  if (el.tagName === 'A') ev.preventDefault();
+  const t = T();
+  switch (act) {
+    case 'tab': ui.tab = el.dataset.tab; ui.edit = false; ui.sel = null; saveUi(); render(); window.scrollTo({ top: 0 }); break;
+    case 'round': ui.round = +el.dataset.r; ui.edit = false; ui.sel = null; render(); break;
+    case 'res': setResult(+el.dataset.b, el.dataset.r, true); break;
+    case 'att': if (el.dataset.v === 'play') delete t.pending[el.dataset.id]; else t.pending[el.dataset.id] = el.dataset.v; commit(); break;
+    case 'pair': doPair(); break;
+    case 'del-round': deleteLastRound(); break;
+    case 'edit-toggle': ui.edit = !ui.edit; ui.sel = null; render(); break;
+    case 'pick': pick(+el.dataset.b, el.dataset.side); break;
+    case 'flip': flip(+el.dataset.b); break;
+    case 'print': window.print(); break;
+    case 'bulk': bulkAdd(); break;
+    case 'sample': addSamples(); break;
+    case 'edit-player': editPlayer(el.dataset.id); break;
+    case 'withdraw': toggleWithdraw(el.dataset.id); break;
+    case 'del-player': deletePlayer(el.dataset.id); break;
+    case 'tb-move': moveTb(+el.dataset.i, +el.dataset.d); break;
+    case 'tb-del': t.settings.tiebreaks.splice(+el.dataset.i, 1); commit(); break;
+    case 'export': exportJSON(); break;
+    case 'import': $('#fileIn').value = ''; $('#fileIn').click(); break;
+    case 'new-t': newTournamentDialog(); break;
+    case 'del-t': deleteTournament(); break;
+    case 'csv': exportCSV(); break;
+    case 'pdf-round': pdfRound(+el.dataset.r); break;
+    case 'pdf-stand': pdfStandings(); break;
+    case 'pdf-cross': pdfCross(); break;
+    case 'pdf-full': pdfFull(); break;
+    case 'close-dlg': $('#dlg').close('cancel'); break;
+  }
+});
+document.addEventListener('change', ev => {
+  const el = ev.target;
+  const t = T();
+  if (el.id === 'fileIn') { if (el.files[0]) importJSON(el.files[0]); return; }
+  const ch = el.dataset.change;
+  if (ch === 'switch-t') {
+    if (el.value === '__new') { newTournamentDialog(); return; }
+    db.activeId = el.value; ui.round = null; ui.standRound = null; ui.edit = false; ui.sel = null;
+    commit(); return;
+  }
+  if (ch === 'res-more') { if (el.value) setResult(+el.dataset.b, el.value); return; }
+  if (ch === 'stand-round') { ui.standRound = +el.value; render(); return; }
+  if (ch === 'absent-type') {
+    const rd = t.rounds[+el.dataset.r];
+    const a = rd && (rd.absent || []).find(x => x.id === el.dataset.id);
+    if (!a) return;
+    if (el.value === 'bye') {
+      rd.absent = rd.absent.filter(x => x !== a);
+      rd.pairings.push({ white: a.id, black: null, result: 'BYE' });
+      toast(`${(t.players.find(p => p.id === a.id) || {}).name} için ${+el.dataset.r + 1}. tur bay olarak düzeltildi`);
+    } else a.type = el.value;
+    commit();
+    return;
+  }
+  if (ch === 'tb-add') { if (el.value) { t.settings.tiebreaks.push(el.value); commit(); } return; }
+  const f = el.dataset.field;
+  if (f && t) {
+    if (f === 'settings.rounds') {
+      const v = Math.max(1, t.rounds.length, Math.min(30, parseInt(el.value, 10) || 1));
+      t.settings.rounds = v;
+      if (ui.round > t.rounds.length) ui.round = null;
+    } else if (f === 'settings.byePoints') t.settings.byePoints = Number(el.value);
+    else if (f === 'settings.firstColor') t.settings.firstColor = el.value;
+    else if (f === 'settings.colorPriority') t.settings.colorPriority = el.value;
+    else if (f === 'name') t.name = el.value.trim() || t.name;
+    else t[f] = el.value.trim();
+    commit();
+  }
+});
+document.addEventListener('submit', ev => {
+  const form = ev.target;
+  const kind = form.dataset.form;
+  if (!kind) return;
+  ev.preventDefault();
+  const fd = Object.fromEntries(new FormData(form));
+  if (kind === 'create') { createTournament(fd.name.trim(), parseInt(fd.rounds, 10)); commit(); return; }
+  if (kind === 'add-player') {
+    const t = T();
+    const p = addPlayer(t, fd.name, fd.rating, fd.club);
+    if (!p) return;
+    ui.focusAdd = true;
+    commit();
+    if (started(t)) toast(`${p.name} eklendi (#${p.no}). Önceki turlardan 0 puan alır.`, 'warn');
+  }
+});
+window.addEventListener('storage', e => { if (e.key === LS_KEY) { load(); render(); } });
+
+load();
+render();
+})();
+</script>
+</body>
+</html>
